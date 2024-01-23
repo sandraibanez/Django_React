@@ -1,20 +1,22 @@
-// // import './StationCard.scss';
-// import React, { useState, useEffect } from 'react';
-// import { useParams } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
-// import { useStations } from "../../hooks/useStations";
-// import SlotsList from "../../components/Client/Rent/SlotsList";
+// import './StationCard.scss';
+import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useStations } from "../../hooks/useStations";
+import SlotsList from "../../components/Client/Rent/SlotsList";
 
-// export default function StationCard ({ station }) {
-//     const { slug } = useParams();
-//     const navigate = useNavigate();
-//     const { oneStation, useOneStation, stationSlots } = useStations();
+export default function StationCard ({ station }) {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const { oneStation, useOneStation, stationSlots } = useStations();
 
-//     useEffect(function () {
-//         useOneStation(slug);
-//     }, [])
+    useEffect(function () {
+        useOneStation(id);
+    }, [])
 
-//     return (
-//         stationSlots.length > 0 ? <SlotsList station={oneStation} slots={stationSlots}/> : <p>No stations available</p>
-//     )
-// }
+    return (
+        // <h1>hola station details</h1>
+        // stationSlots.length > 0 ? <SlotsList station={oneStation} slots={stationSlots}/> : <p>No stations available</p>
+        <SlotsList station={oneStation} slots={stationSlots}/>
+    )
+}

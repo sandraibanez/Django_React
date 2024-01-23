@@ -1,15 +1,15 @@
 import './SlotCard.scss';
 import React, { useState, useContext, useEffect } from 'react';
-import AuthContext from "../../../context/AuthContext";
+// import AuthContext from "../../../context/AuthContext";
 // import { useRent } from "../../../hooks/useRent";
 // import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IncidenceSlotModal from "../Incidents/IncidenceSlotModal";
+// import IncidenceSlotModal from "../Incidents/IncidenceSlotModal";
 import RentModal from "./RentModal";
 
 export default function SlotCard ({ slot }) {
     // const navigate = useNavigate();
-    const { isAuth } = useContext(AuthContext);
+    // const { isAuth } = useContext(AuthContext);
     // const { isCorrect, useRentScooter, useBringBackScooter } = useRent();
     const [openModal, setOpenModal] = useState(false);
     const [openModalRent, setOpenModalRent] = useState(false);
@@ -21,7 +21,7 @@ export default function SlotCard ({ slot }) {
     const slot_status = slot.status === 'in_use' ? 'Scooter available' : slot.status === 'vacant' ? 'Vacant' : 'Maintenance';
 
     const rent_scooter = (slot) => {
-        if (isAuth) {
+        // if (isAuth) {
             if (slot.status == 'in_use') {
                 // useRentScooter(slot);
                 setOpenModalRent(true);
@@ -31,9 +31,9 @@ export default function SlotCard ({ slot }) {
                 setOpenModalRent(true);
                 setModalSlot(slot);
             }
-        } else {
-            console.log('login');
-        }
+        // } else {
+        //     console.log('login');
+        // }
     }
 
     // useEffect(() => {
@@ -64,7 +64,7 @@ export default function SlotCard ({ slot }) {
                     Report an incidence
                 </p>
             </div>
-            <IncidenceSlotModal openModal={openModal} setOpenModal={setOpenModal} incidenceType={incidence_type} id={modalSlot}/>
+            {/* <IncidenceSlotModal openModal={openModal} setOpenModal={setOpenModal} incidenceType={incidence_type} id={modalSlot}/> */}
             <RentModal openModalRent={openModalRent} setOpenModalRent={setOpenModalRent} rent={modalSlot}/>
         </div>
     )

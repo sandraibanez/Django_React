@@ -1,27 +1,27 @@
-// import api from "./api"
+import api from "./api"
 
-// const ScooterService = {
+const ScooterService = {
 
-//     getAllScooters() {
-//         return api().get("/scooter");
-//     },
+    getAllScooters() {
+        return api().get("/scooter");
+    },
 
-//     getOneScooter(slug) {
-//         return api().get(`scooter/${slug}`);
-//     },
+    getOneScooter(slug) {
+        return api().get(`scooter/${slug}`);
+    },
 
-//     createScooter(data) {
-//         return api().post("/scooter", { 'scooter': data });
-//     },
+    createScooter(data) {
+        return api().post("/scooter", { 'scooter': data });
+    },
 
-//     updateScooter(slug, data) {
-//         return api().put(`scooter/${slug}`, { 'scooter': data });
-//     },
+    updateScooter(slug, data) {
+        return api().put(`scooter/${slug}`, { 'scooter': data });
+    },
 
-//     deleteScooter(slug) {
-//         return api().delete(`scooter/${slug}`);
-//     },
+    deleteScooter(slug) {
+        return api().delete(`scooter/${slug}`);
+    },
     
-// };
+};
 
-// export default ScooterService;
+export default ScooterService;

@@ -14,65 +14,43 @@ from .serializers import BicisSerializer
 from .serializers import StationsSerializer
 from rest_framework.decorators import api_view
 
-@api_view(['GET', 'POST', 'DELETE'])
-def stations_list(request):   
-    if request.method == 'GET':
-        stations = Stations.objects.all()
-        
-        title = request.GET.get('title', None)
-        if title is not None:
-            stations = stations.filter(title__icontains=title)
-        
-        stations_serializer = StationsSerializer(stations, many=True)
-        return Response(stations_serializer.data) 
+class StationsView(viewsets.GenericViewSet):
 
-    elif request.method == 'POST':
-        stations_data = JSONParser().parse(request)
-        stations_serializer = StationsSerializer(data=stations_data)
-
-        if stations_serializer.is_valid():
-            stations_serializer.save()
-            return Response(stations_serializer.data, status=status.HTTP_201_CREATED) 
-        return Response(stations_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    elif request.method == 'DELETE':
-        count = Stations.objects.all().delete()
-        return Response({'message': '{} stations were deleted successfully!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
     
- 
-@api_view(['GET', 'PUT', 'DELETE'])
-def stations_detail(request, pk):
-    try: 
-        stations = Stations.objects.get(id=pk) 
-    except Stations.DoesNotExist: 
-        return JsonResponse({'message': 'The stations does not exist'}, status=status.HTTP_404_NOT_FOUND) 
- 
-    if request.method == 'GET': 
-        stations_serializer = StationsSerializer(stations) 
-        return JsonResponse(stations_serializer.data) 
- 
-    elif request.method == 'PUT': 
-        stations_data = JSONParser().parse(request) 
-        stations_serializer = StationsSerializer(stations, data=stations_data) 
-        if stations_serializer.is_valid(): 
-            stations_serializer.save() 
-            return JsonResponse(stations_serializer.data) 
-        return JsonResponse(stations_serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
- 
-    elif request.method == 'DELETE': 
-        stations.delete() 
-        return JsonResponse({'message': 'stations was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
-   
-         
-@api_view(['GET'])
-def stations_list_published(request):
-
-    stations = Stations.objects.filter(published=True)
-        
-    if request.method == 'GET': 
+    def getStations(self, request):
+        stations = Stations.objects.all()
         stations_serializer = StationsSerializer(stations, many=True)
-        return JsonResponse(stations_serializer.data, safe=False)
-    return JsonResponse({'message': 'GET list of stations, POST a new station, DELETE all stations'}) 
+        return Response(stations_serializer.data)
+    
+    def getOneStation(self, request, id):
+        station = Stations.objects.get(id=id)
+        station_serializer = StationsSerializer(station)
+        return Response(station_serializer.data)
+
+    def post(self, request):
+        station = request.data.get('station')
+        serializer = StationsSerializer(data=station)
+        if (serializer.is_valid(raise_exception=True)):
+            serializer.save()
+        if (request.data.get('slot')):
+            slots = request.data.get('slot')
+            slot_station = {'station_id': serializer.data['id']}
+            for i in range(slots['num_slots']):
+                SlotSerializer.create(context=slot_station, number=i)
+        return Response(serializer.data)
+
+    def put(self, request, id):
+        station = Stations.objects.get(id=id)
+        data = request.data.get('station')
+        serializer = StationsSerializer(instance=station, data=data, partial=True)
+        if (serializer.is_valid(raise_exception=True)):
+            serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, id):
+        station = Stations.objects.get(id=id)
+        station.delete()
+        return Response({'data': 'Station deleted successfully'})
 
 class BicisView(viewsets.GenericViewSet):
 

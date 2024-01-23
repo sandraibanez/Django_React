@@ -1,9 +1,36 @@
 
 import {useContext, useCallback, useEffect, useState} from 'react';
 import StationContext from "../context/StationsContext";
-     
+import StationService from '../services/StationService';
+import SlotService from '../services/SlotService';
+import { useSlots } from './useSlots';
 
 export function useStations() {
     const {stations, setStations} = useContext(StationContext);
-    return { stations, setStations}
+    const [oneStation, setOneStation] = useState({});
+    const { slots, setSlots } = useSlots();
+    const [stationSlots, setStationSlots] = useState([]);
+    useEffect(() => {
+        const station = { 'station_id': oneStation.id };
+        SlotService.getAllSlots(station)
+            .then(({ data, status }) => {
+                if (status === 200) {
+                    setStationSlots(data);
+                    console.log(data);
+                }
+            })
+            .catch(e => console.error(e));
+    }, [oneStation]);
+
+    const useOneStation = useCallback((id) => {
+        console.log(id);
+        StationService.getOneStation(id)
+            .then(({data}) => {
+                setOneStation(data);
+                console.log(data);
+            })
+            .catch(e => console.error(e));
+    }, [oneStation]);
+
+    return { stations, setStations, useOneStation, oneStation,setOneStation, setStationSlots, stationSlots}
 }

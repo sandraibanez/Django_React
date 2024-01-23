@@ -1,6 +1,6 @@
 import React from 'react';
 import SlotCard from './SlotCard';
-import StationMap from '../Map/StationMap';
+// import StationMap from '../Map/StationMap';
 
 export default function SlotsList ({ station, slots }) {
 

@@ -1,15 +1,15 @@
-// import api from "./api"
+import api from "./api"
 
-// const SlotService = {
+const SlotService = {
 
-//     getAllSlots(station = null) {
-//         return api().get("/slot", { params: station });
-//     },
+    getAllSlots(stations = null) {
+        return api().get("/slot", { params: stations });
+    },
 
-//     getOneSlot(id) {
-//         return api().get(`slot/${id}`);
-//     },
+    getOneSlot(id) {
+        return api().get(`slot/${id}`);
+    },
 
-// };
+};
 
-// export default SlotService;
+export default SlotService;

@@ -1,12 +1,15 @@
 from django.urls import path
 from . import views
+from .views import StationsView
 from .views import SlotView
 from .views import BicisView
 urlpatterns = [      
     #staciones
-    path('stations/', views.stations_list, name='stations-list'),
-    path('stations/<int:pk>', views.stations_detail, name='stations-detail'),
-    path('stations/published', views.stations_list_published, name='stations-list-published'),
+    path('stations/', StationsView.as_view({'get': 'getStations'})),
+    path('stations/<int:pk>', StationsView.as_view({'get': 'getOneStation'})),
+    path('stations', StationsView.as_view({'post': 'post'})),
+    path('stations/<int:pk>', StationsView.as_view({'put': 'put'})),
+    path('stations/<int:pk>', StationsView.as_view({'delete': 'delete'})),
     # slot
     path('slot', SlotView.as_view({'get': 'getSlots'})),
     path('slot/<int:id>', SlotView.as_view({"get": "getOneSlot"})),

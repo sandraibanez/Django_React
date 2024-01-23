@@ -1,16 +1,16 @@
 import React, { useEffect, useContext } from "react";
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 import './RentModal.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useIncidents } from "../../../hooks/useIncidents";
-import AuthContext from "../../../context/AuthContext";
+// import { useIncidents } from "../../../hooks/useIncidents";
+// import AuthContext from "../../../context/AuthContext";
 import { useRent } from "../../../hooks/useRent";
 import { useNavigate } from "react-router-dom";
-Modal.setAppElement('#root');
+// Modal.setAppElement('#root');
 
 export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
     const navigate = useNavigate();
-    const { isAuth } = useContext(AuthContext);
+    // const { isAuth } = useContext(AuthContext);
     const { isCorrect, useRentScooter, useBringBackScooter } = useRent();
 
     let status_type = '';
@@ -33,7 +33,7 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
     }
 
     const rent_scooter = () => {
-        if (isAuth) {
+        // if (isAuth) {
             if (rent != null) {
                 if (rent.status == 'in_use') {
                     useRentScooter(rent);
@@ -41,9 +41,9 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
                     useBringBackScooter(rent);
                 }
             }
-        } else {
-            console.log('login');
-        }
+        // } else {
+        //     console.log('login');
+        // }
     }
 
     useEffect(() => {
@@ -54,7 +54,8 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
 
     return (
         <div className="modal">
-            <Modal className="rentModal" isOpen={openModalRent} onRequestClose={() => handleClose()} style={customStyles}>
+            <hi>hola</hi>
+            {/* <Modal className="rentModal" isOpen={openModalRent} onRequestClose={() => handleClose()} style={customStyles}>
                 <div className="rent_box">
                     <button className="modal_button" onClick={() => handleClose()}>
                         <FontAwesomeIcon className="cross_button" icon="fa-solid fa-square-xmark"/>
@@ -65,7 +66,7 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
                         <button type="button" className="btn btn-danger" onClick={() => handleClose()}>Cancel</button>
                     </div>
                 </div>
-            </Modal>
+            </Modal> */}
         </div>
     )
 }
