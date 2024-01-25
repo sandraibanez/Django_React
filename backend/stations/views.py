@@ -22,8 +22,8 @@ class StationsView(viewsets.GenericViewSet):
         stations_serializer = StationsSerializer(stations, many=True)
         return Response(stations_serializer.data)
     
-    def getOneStation(self, request, id):
-        station = Stations.objects.get(id=id)
+    def getOneStation(self, request, slug):
+        station = Stations.objects.get(slug=slug)
         station_serializer = StationsSerializer(station)
         return Response(station_serializer.data)
 
@@ -38,17 +38,18 @@ class StationsView(viewsets.GenericViewSet):
             for i in range(slots['num_slots']):
                 SlotSerializer.create(context=slot_station, number=i)
         return Response(serializer.data)
+        # return Response(slots)
 
-    def put(self, request, id):
-        station = Stations.objects.get(id=id)
+    def put(self, request, slug):
+        station = Stations.objects.get(slug=slug)
         data = request.data.get('station')
         serializer = StationsSerializer(instance=station, data=data, partial=True)
         if (serializer.is_valid(raise_exception=True)):
             serializer.save()
         return Response(serializer.data)
 
-    def delete(self, request, id):
-        station = Stations.objects.get(id=id)
+    def delete(self, request, slug):
+        station = Stations.objects.get(slug=slug)
         station.delete()
         return Response({'data': 'Station deleted successfully'})
 
@@ -66,8 +67,8 @@ class BicisView(viewsets.GenericViewSet):
         bicis_serializer = BicisSerializer(bicis, many=True)
         return Response(bicis_serializer.data)
 
-    def getOneBicis(self, request, id):
-        bicis = Bicis.objects.get(id=id)
+    def getOneBicis(self, request, slug):
+        bicis = Bicis.objects.get(slug=slug)
         bicis_serializer = BicisSerializer(bicis)
         return Response(bicis_serializer.data)
 
@@ -78,8 +79,8 @@ class BicisView(viewsets.GenericViewSet):
             serializer.save()
         return Response(serializer.data)
 
-    def put(self, request, id):
-        bici = Bicis.objects.get(id=id)
+    def put(self, request, slug):
+        bici = Bicis.objects.get(slug=slug)
         data = request.data.get('bici')
         serializer = BicisSerializer(bici, data=data, partial=True)
         if serializer.is_valid(raise_exception=True):
@@ -93,8 +94,8 @@ class BicisView(viewsets.GenericViewSet):
 
         return Response(serializer.data)
 
-    def delete(self, request, id):
-        bicis = Bicis.objects.get(id=id)
+    def delete(self, request, slug):
+        bicis = Bicis.objects.get(slug=slug)
         bicis.delete()
         return Response({'data': 'Bicis deleted successfully'})
 
@@ -109,11 +110,10 @@ class SlotView(viewsets.GenericViewSet):
     #     return super(SlotView, self).get_permissions()
 
     def getSlots(self, request):
-        if request.GET.get('station_id') is not None:
-            slots = Slot.objects.filter(station_id=request.GET.get('station_id'))
+        if request.GET.get('stations_id') is not None:
+            slots = Slot.objects.filter(stations_id=request.GET.get('stations_id'))
         else:
             slots = Slot.objects.all()
-
         serializer = SlotSerializer(slots, many=True)
         return Response(serializer.data)
 

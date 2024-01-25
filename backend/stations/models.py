@@ -8,10 +8,10 @@ class Stations(models.Model):
     img = models.CharField(max_length=255, blank=False, default='')
 
 
-    class Meta:
-        app_label = 'stations'
+    def __str__(self):
+        return str(self.id)
 class Bicis(models.Model):
-    slug = models.SlugField(max_length=100, unique=True, editable=False)
+    slug = models.CharField(max_length=255, unique=True, editable=False)
     name = models.CharField(max_length=100)
     status = models.CharField(max_length=100, default='')
 

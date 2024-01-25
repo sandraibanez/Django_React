@@ -6,21 +6,22 @@ const StationService = {
         return api().get("/stations");
     },
 
-    getOneStation(id) {
-        console.log(id);
-        return api().get(`stations/${id}`);
+    getOneStation(slug) {
+        console.log(slug);
+        return api().get(`stations/${slug}`);
     },
 
-    createStation(data, slots = 0) {
-        return api().post("/stations", { 'stations': data, 'slot': { 'num_slots': slots } });
+    createStation(data) {
+        console.log( data );
+        return api().post("/stations/", { 'station': data });
     },
 
     updateStation(slug, data) {
-        return api().put(`stations/${slug}`, { 'stations': data });
+        return api().put(`stations/${slug}`, { 'station': data });
     },
 
     deleteStation(slug) {
-        return api().delete(`station/${slug}`);
+        return api().delete(`stations/${slug}`);
     },
     
 };

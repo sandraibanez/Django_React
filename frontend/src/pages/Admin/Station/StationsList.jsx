@@ -1,14 +1,14 @@
-// import React from "react";
-// import { useStations } from "../../../hooks/useStations";
-// import StationsListAdmin from "../../../components/Admin/Station/StationsListAdmin";
+import React from "react";
+import { useStations } from "../../../hooks/useStations";
+import StationsListAdmin from "../../../components/Admin/Station/StationsListAdmin";
 
-// const StationsList = () => {
+const StationsList = () => {
 
-//     const {stations, useDeleteStation} = useStations();
+    const {stations, useDeleteStation} = useStations();
 
-//     return (        
-//         <StationsListAdmin stations={stations} deleteStation={useDeleteStation}/>
-//     )
-// }
+    return (        
+        <StationsListAdmin stations={stations} deleteStation={useDeleteStation}/>
+    )
+}
 
-// export default StationsList;
+export default StationsList;

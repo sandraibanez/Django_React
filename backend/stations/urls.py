@@ -6,17 +6,17 @@ from .views import BicisView
 urlpatterns = [      
     #staciones
     path('stations/', StationsView.as_view({'get': 'getStations'})),
-    path('stations/<int:pk>', StationsView.as_view({'get': 'getOneStation'})),
-    path('stations', StationsView.as_view({'post': 'post'})),
-    path('stations/<int:pk>', StationsView.as_view({'put': 'put'})),
-    path('stations/<int:pk>', StationsView.as_view({'delete': 'delete'})),
+    path('stations/<str:slug>', StationsView.as_view({'get': 'getOneStation'})),
+    path('stations/', StationsView.as_view({'post': 'post'})),
+    path('stations/<str:slug>', StationsView.as_view({'put': 'put'})),
+    path('stations/<str:slug>', StationsView.as_view({'delete': 'delete'})),
     # slot
     path('slot', SlotView.as_view({'get': 'getSlots'})),
     path('slot/<int:id>', SlotView.as_view({"get": "getOneSlot"})),
     #bicis
     path('bici', BicisView.as_view({'get': 'getBicis'})),
-    path('bici/<int:id>', BicisView.as_view({'get': 'getOneBicis'})),
+    path('bici/<str:slug>', BicisView.as_view({'get': 'getOneBicis'})),
     path('bici', BicisView.as_view({'post': 'post'})),
-    path('bici/<int:id>', BicisView.as_view({'put': 'put'})),
-    path('bici/<int:id>', BicisView.as_view({'delete': 'delete'}))
+    path('bici/<str:slug>', BicisView.as_view({'put': 'put'})),
+    path('bici/<str:slug>', BicisView.as_view({'delete': 'delete'}))
 ]

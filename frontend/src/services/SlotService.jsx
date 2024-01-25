@@ -2,8 +2,8 @@ import api from "./api"
 
 const SlotService = {
 
-    getAllSlots(stations = null) {
-        return api().get("/slot", { params: stations });
+    getAllSlots(station = null) {
+        return api().get("/slot", { params: station });
     },
 
     getOneSlot(id) {

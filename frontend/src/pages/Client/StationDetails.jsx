@@ -6,17 +6,17 @@ import { useStations } from "../../hooks/useStations";
 import SlotsList from "../../components/Client/Rent/SlotsList";
 
 export default function StationCard ({ station }) {
-    const { id } = useParams();
+    const { slug } = useParams();
     const navigate = useNavigate();
     const { oneStation, useOneStation, stationSlots } = useStations();
 
     useEffect(function () {
-        useOneStation(id);
+        useOneStation(slug);
     }, [])
 
     return (
         // <h1>hola station details</h1>
-        // stationSlots.length > 0 ? <SlotsList station={oneStation} slots={stationSlots}/> : <p>No stations available</p>
-        <SlotsList station={oneStation} slots={stationSlots}/>
+        stationSlots.length > 0 ? <SlotsList station={oneStation} slots={stationSlots}/> : <p>No stations available</p>
+        // <SlotsList station={oneStation} slots={stationSlots}/>
     )
 }

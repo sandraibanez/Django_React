@@ -4,8 +4,8 @@ export default function StationsList ({ stations }) {
     return  (
         <div className="stations_cards-list">
             {
-                stations.map(( station, id ) => (
-                    <StationCard key={id} station={station}/>
+                stations.map(( station, slug ) => (
+                    <StationCard key={slug} station={station}/>
                 ))
             }
         </div>

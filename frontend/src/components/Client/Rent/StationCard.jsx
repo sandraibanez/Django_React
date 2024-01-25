@@ -7,7 +7,7 @@ export default function StationCard ({ station }) {
     const navigate = useNavigate();
 
     const redirects = {
-        details: (id) => navigate('/stations/' + id),
+        details: (slug) => navigate('/stations/' + slug),
     }
 
     return (
@@ -16,7 +16,7 @@ export default function StationCard ({ station }) {
                 <div className="row gy-4">
                     <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                         <div className="card">
-                            <div className="card-img" onClick={() => redirects.details(station.id)}>
+                            <div className="card-img" onClick={() => redirects.details(station.slug)}>
                                     {/* <img src="/stations/img/station1.jpg"/>  */}
                                     <img src={stationimg} />
                             </div>

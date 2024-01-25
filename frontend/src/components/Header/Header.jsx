@@ -12,7 +12,7 @@ export default function Header () {
     const redirects = {
         home: () => navigate('/home'),
         rent: () => navigate('/rent'),
-        // dashboard: () => navigate('/dashboard'),
+        dashboard: () => navigate('/dashboard'),
         // login: () => navigate('/login'),
         // register: () => navigate('/register'),
         // profile: (id) => navigate('/profile/' + id),
@@ -35,6 +35,7 @@ export default function Header () {
                     <ul className="header-container container-fluid">
                         <li className="link nav-link" onClick={() => redirects.rent()}>Rent</li>
                         <li className="link nav-link" onClick={() => redirects.home()}>Home</li>
+                        <li className="link nav-link" onClick={() => redirects.dashboard()}>Dashboard</li>
                         {/* <div className="navbar_list collapse navbar-collapse" id="headerNav">
                             <ul className="nav_list navbar-nav">
                                 <li className="link nav-link" onClick={() => redirects.home()}>Home</li>

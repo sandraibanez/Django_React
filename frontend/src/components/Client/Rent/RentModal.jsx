@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
     const navigate = useNavigate();
     // const { isAuth } = useContext(AuthContext);
-    const { isCorrect, useRentScooter, useBringBackScooter } = useRent();
+    const { isCorrect, useRentBici, useBringBackBici } = useRent();
 
     let status_type = '';
 
@@ -28,15 +28,15 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
     }
 
     if (rent != null) {
-        status_type = rent.status === 'in_use' ? <p>You are going to rent a scooter</p>
-        : <p>You are going to bring back the scooter</p>
+        status_type = rent.status === 'in_use' ? <p>You are going to rent a Bici</p>
+        : <p>You are going to bring back the Bici</p>
     }
 
     const rent_scooter = () => {
         // if (isAuth) {
             if (rent != null) {
                 if (rent.status == 'in_use') {
-                    useRentScooter(rent);
+                    useRentBici(rent);
                 } else {
                     useBringBackScooter(rent);
                 }
@@ -54,19 +54,19 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
 
     return (
         <div className="modal">
-            <hi>hola</hi>
-            {/* <Modal className="rentModal" isOpen={openModalRent} onRequestClose={() => handleClose()} style={customStyles}>
+            {/* <hi>hola</hi> */}
+            {/* <Modal className="rentModal" isOpen={openModalRent} onRequestClose={() => handleClose()} style={customStyles}> */}
                 <div className="rent_box">
                     <button className="modal_button" onClick={() => handleClose()}>
                         <FontAwesomeIcon className="cross_button" icon="fa-solid fa-square-xmark"/>
                     </button>
                     {status_type}
                     <div className='buttons_box'>
-                        <button type="button" className="btn btn-primary" onClick={() => { rent_scooter() }}>Accept</button>
+                        <button type="button" className="btn btn-primary" onClick={() => { rent_Bici() }}>Accept</button>
                         <button type="button" className="btn btn-danger" onClick={() => handleClose()}>Cancel</button>
                     </div>
                 </div>
-            </Modal> */}
+            {/* </Modal> */}
         </div>
     )
 }

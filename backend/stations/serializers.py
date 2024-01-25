@@ -15,13 +15,13 @@ class BicisSerializer(serializers.ModelSerializer):
         model = Bicis
         fields = ['id', 'slug', 'name', 'status']
 
-    def to_Bici(instance):
-        return {
-            "id": instance.id,
-            "slug": instance.slug,
-            "name": instance.name,
-            "status": instance.status,
-        }
+    # def to_Bici(instance):
+    #     return {
+    #         "id": instance.id,
+    #         "slug": instance.slug,
+    #         "name": instance.name,
+    #         "status": instance.status,
+    #     }
     
     # def getUserScooter(context):
         # username = context['username']
@@ -56,9 +56,10 @@ class SlotSerializer(serializers.ModelSerializer):
         }
 
     def create(context, number):
-        stations_id = context['stations_id']
-        station = Stations.objects.get(pk=stations_id)
 
+        stations_id = context['station_id']
+        
+        station = Stations.objects.get(pk=stations_id)
         if station is None:
             raise serializers.ValidationError('Station not found')
 
