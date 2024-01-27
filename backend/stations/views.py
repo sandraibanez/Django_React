@@ -38,7 +38,6 @@ class StationsView(viewsets.GenericViewSet):
             for i in range(slots['num_slots']):
                 SlotSerializer.create(context=slot_station, number=i)
         return Response(serializer.data)
-        # return Response(slots)
 
     def put(self, request, slug):
         station = Stations.objects.get(slug=slug)

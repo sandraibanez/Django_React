@@ -11,9 +11,8 @@ const StationService = {
         return api().get(`stations/${slug}`);
     },
 
-    createStation(data) {
-        console.log( data );
-        return api().post("/stations/", { 'station': data });
+    createStation(data, slots=0) {
+        return api().post("stations/", { 'station': data, 'slot': { 'num_slots': slots } });
     },
 
     updateStation(slug, data) {

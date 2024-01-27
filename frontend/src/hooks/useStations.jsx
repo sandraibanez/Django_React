@@ -36,16 +36,19 @@ export function useStations() {
     
     const useAddStation = useCallback(data => {
         let station_data = {
-            name: data.name,
-            direction: data.direction,
-            // status: data.status,
-            img: data.image,
-            location: data.location
-            // latitude: data.latitude,
-            // longitude: data.longitude
+            "station":{
+                direction: data.direction ,
+                location: data.location,
+                name: data.name,
+                img: data.img
+            }
+
+        //    "slot":{
+        //         num_slot: data.slots
+        //    }
         }
 
-        StationService.createStation(data)
+        StationService.createStation(data,data.slots)
             .then(({ data, status }) => {
                 if (status === 200) {
                     // toast.success('Station created successfully');
@@ -62,16 +65,18 @@ export function useStations() {
 
     const useUpdateStation = useCallback((slug, data) => {
         let station_data = {
-            direction: data.direction ,
-            location: data.location,
-            name: data.name,
-            // status: data.status,
-            img: data.img
-            // latitude: data.latitude,
-            // longitude: data.longitude
+            "station":{
+                direction: data.direction ,
+                location: data.location,
+                name: data.name,
+                img: data.img
+            },
+           "slot":{
+                num_slot: data.num_slot
+           }
         }
 
-        StationService.updateStation(slug, station_data)
+        StationService.updateStation(slug, data)
             .then(({ data, status }) => {
                 if (status === 200) {
                     let old_stations = [...stations];
