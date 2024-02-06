@@ -176,7 +176,13 @@
     color: var(--color-primary);
     transition: 0.3s;
   }
-  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .link{
+    margin-right: 10px;
+  }
   .breadcrumbs nav ol a:hover {
     text-decoration: underline;
   }

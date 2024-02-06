@@ -32,7 +32,7 @@ const StationsForm = ({station= {slug: '', name: '', direction: '', img: '', loc
             setValue('location',station.location);
             // setValue('latitude', station.latitude);
             // setValue('longitude', station.longitude);
-            setValue('slots', station.total_slots);
+            setValue('slots', station.slots);
         }
     }, [station]);
 
@@ -91,7 +91,7 @@ const StationsForm = ({station= {slug: '', name: '', direction: '', img: '', loc
            */}
             <div className='slots_box'>
                 <label htmlFor='slots' className='etiqueta'>Slots:</label>
-                <input id='slots' name="slots" type="text" {...register('slots')} disabled={read_only}/><br/>
+                <input id='slots' name="slots" type="text" {...register('slots')}/><br/>
                 <span className="error">{errors.slots?.message}</span>
             </div> 
             <div className='buttons_box'>

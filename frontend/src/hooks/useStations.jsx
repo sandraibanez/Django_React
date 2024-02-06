@@ -17,7 +17,7 @@ export function useStations() {
             .then(({ data, status }) => {
                 if (status === 200) {
                     setStationSlots(data);
-                    console.log(data);
+                    // console.log(data);
                 }
             })
             .catch(e => console.error(e));

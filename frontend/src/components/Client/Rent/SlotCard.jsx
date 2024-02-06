@@ -51,7 +51,7 @@ export default function SlotCard ({ slot }) {
 
     return (
         // <h1>hola</h1>
-        <div className="row gy-4">
+        <div>
             <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                 <div className="slot">
                     <div className="card" onClick={() => { rent_scooter(slot) }}>

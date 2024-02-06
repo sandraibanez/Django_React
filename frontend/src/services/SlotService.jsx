@@ -2,8 +2,9 @@ import api from "./api"
 
 const SlotService = {
 
-    getAllSlots(station = null) {
-        return api().get("/slot", { params: station });
+    getAllSlots(station = 0) {
+        let num = station.station_id !== undefined ? station.station_id : 0;
+        return api().get(`/slot?stations_id=${num}`);
     },
 
     getOneSlot(id) {

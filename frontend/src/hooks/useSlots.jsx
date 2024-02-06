@@ -5,12 +5,12 @@ import SlotsContext from '../context/SlotsContext';
 export function useSlots() {
     const {slots, setSlots} = useContext(SlotsContext);
     const [oneSlot, setOneSlot] = useState({});
-    console.log(slots);
+
     const useOneSlot = useCallback((id) => {
         SlotService.getOne(id).
             then(({ data }) => {
                 setOneSlot(data)
-                console.log(data);
+                // console.log(data);
             })
             .catch(e => console.error(e));
     }, []);

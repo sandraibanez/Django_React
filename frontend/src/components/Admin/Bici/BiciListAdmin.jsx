@@ -15,6 +15,9 @@ export default function BiciListAdmin ({ bici, deleteBici }) {
     return  (
         <div className="Bici_list_container">
             <h1>Bici List</h1>
+            <br/>
+            <br/>
+            <br/>
             <button className="button add_button" onClick={() => redirects.add_Bici()}>Add Bici</button>
             <table className="table" border="1">
                 <thead className="thead_Bici_list">

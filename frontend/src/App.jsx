@@ -26,11 +26,13 @@ import SpinnerLoading from './components/SpinnerLoading/SpinnerLoading';
 import { StationContextProvider } from './context/StationsContext';
 import { SlotContextProvider } from './context/SlotsContext';
 import { BiciContextProvider } from './context/BiciContext';
+import { AuthContextProvider } from './context/AuthContext';
 // rutas de la aplicacion
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Rent = React.lazy(() => import( "./pages/Rent/Rent"));
 const Dashboard = React.lazy(() => import( "./pages/Admin/Dashboard"));
-
+const Login = React.lazy(() => import( "./pages/Login/Login"));
+const Register = React.lazy(() => import( "./pages/Login/Register"));
 
 const StationsList = React.lazy(() => import('./pages/Admin/Station/StationsList'));
 const StationsAdd = React.lazy(() => import('./pages/Admin/Station/StationsAdd'));
@@ -48,27 +50,33 @@ function App() {
     <div className="App">
       <Suspense fallback={<SpinnerLoading/>}> 
         <BrowserRouter>
-          <StationContextProvider>
-            <BiciContextProvider>
-            <SlotContextProvider>
-              <Header/>
-                <Routes>
-                  <Route path="/" element={<Rent/>} />
-                  <Route path="/home" element={<Home/>} />
-                  <Route path="/rent" element={<Rent/>} /> 
-                  <Route path="/stations/:slug" element={<StationDetails/>}/>
-                  <Route path="/dashboard" element={<Dashboard/>}/>
-                  <Route path="/dashboard/stations" element={<StationsList/>}/>
-                  <Route path="/dashboard/stations/add" element={<StationsAdd/>}/>
-                  <Route path="/dashboard/stations/update/:slug" element={<StationsUpdate/>}/>
-                  <Route path="/dashboard/bici" element={<BiciList/>}/>
-                  <Route path="/dashboard/bici/add" element={<BiciAdd/>}/>
-                  <Route path="/dashboard/bici/update/:slug" element={<BiciUpdate/>}/>
-                </Routes>
-              <Footer/> 
-            </SlotContextProvider>
-            </BiciContextProvider>
-          </StationContextProvider>
+          <AuthContextProvider>
+            <StationContextProvider>
+              <BiciContextProvider>
+                <SlotContextProvider>
+                  <Header/>
+                    <Routes>
+                      {/* rutas del header */}
+                      <Route path="/" element={<Rent/>} />
+                      <Route path="/home" element={<Home/>} />
+                      <Route path="/rent" element={<Rent/>} /> 
+                      <Route path="/login" element={<Login/>}/>
+                      <Route path="/register" element={<Register/>}/>
+                      {/* rutas salto de las paginas */}
+                      <Route path="/stations/:slug" element={<StationDetails/>}/>
+                      <Route path="/dashboard" element={<Dashboard/>}/>
+                      <Route path="/dashboard/stations" element={<StationsList/>}/>
+                      <Route path="/dashboard/stations/add" element={<StationsAdd/>}/>
+                      <Route path="/dashboard/stations/update/:slug" element={<StationsUpdate/>}/>
+                      <Route path="/dashboard/bici" element={<BiciList/>}/>
+                      <Route path="/dashboard/bici/add" element={<BiciAdd/>}/>
+                      <Route path="/dashboard/bici/update/:slug" element={<BiciUpdate/>}/>
+                    </Routes>
+                  <Footer/> 
+                </SlotContextProvider>
+              </BiciContextProvider>
+            </StationContextProvider>
+          </AuthContextProvider>
         </BrowserRouter>
       </Suspense>
     </div>

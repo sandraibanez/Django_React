@@ -31,6 +31,7 @@ const SignUpForm = ({form_type, sendData, errorMSG}) => {
     const bounce_type = form_type == 'login' ? 'user_options-forms SignIn' : 'user_options-forms SignUp';
 
     return (
+        // <h1>hola1</h1>
         <div className="user">
             <div className="user_options-container">
                 <div className="user_options-text">
