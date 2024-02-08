@@ -1,3 +1,5 @@
+import jwt
+from django.conf import settings
 from datetime import datetime
 from rest_framework import serializers
 from .models import Rent
@@ -9,6 +11,12 @@ class RentSerializer(serializers.ModelSerializer):
         model = Rent
         fields = ['id', 'user_id', 'bici_id', 'initial_slot_id','end_slot_id', 'initial_date', 'end_date']
 
+    def usertoken(context):
+        token = context['token']
+        payload = jwt.decode(token, settings.SECRET_KEY)
+        user = User.objects.get(username=payload['username'])
+        return (user.username, token, user.type)
+   
     def to_rent(instance):
         return ({
             "id": instance.id,
@@ -21,7 +29,6 @@ class RentSerializer(serializers.ModelSerializer):
         })
 
     def rent(context):
-        
         username = context['username']
         slot_id = context['slot_id']
 
@@ -51,18 +58,17 @@ class RentSerializer(serializers.ModelSerializer):
         slot.save()
 
         bici.status = 'in_use'
-        bici1.save()
+        bici.save()
         return rent
 
     def getOneRent(context):
-        return print('context')
         username = context['username']
 
         user = User.objects.get(username=username)
-
-        if user is None:
+        
+        if username is None:
             raise serializers.ValidationError('User not found')
-
+        
         rent = Rent.objects.get(user_id=user.id, end_slot_id=None)
         return rent
 

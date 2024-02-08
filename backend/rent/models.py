@@ -3,7 +3,6 @@ from users.models import User
 from stations.models import Bicis, Slot
 
 class Rent(models.Model):
-
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
     bici = models.ForeignKey(Bicis, on_delete=models.CASCADE, related_name="bici")
     initial_slot = models.ForeignKey(Slot, on_delete=models.CASCADE, related_name="start_slot")

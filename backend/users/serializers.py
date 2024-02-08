@@ -3,32 +3,13 @@ from django.conf import settings
 from rest_framework import serializers
 from .models import User
 from .models import Profile
-# from rent.models import Rent
+from rent.models import Rent
 from stations.models import Bicis
 
 class userSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ( 'id', 'uuid', 'username', 'email', 'password', 'type')
-    # class Meta:
-    #         model = Blacklist
-    #         fields = ('token')
-
-    # def newBlackToken(context):
-    #     token = context['token']
-    #     payload = jwt.decode(token, settings.SECRET_KEY)
-    #     user = User.objects.get(username=payload['username'])
-    #     return {
-    #         'user': {
-    #             'id': user.id,
-    #             'username': user.username,
-    #             'email': user.email,
-    #             'type': user.type
-    #         },
-    #         'token': user.token,
-    #         'ref_token': user.ref_token,
-    #     }
-
     def register(context):
         username = context['username']
         email = context['email']
