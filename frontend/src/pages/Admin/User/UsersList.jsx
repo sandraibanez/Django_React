@@ -1,18 +1,18 @@
-// import React, { useEffect } from "react";
-// import { useAuth } from "../../../hooks/useAuth";
-// import UsersListAdmin from "../../../components/Admin/User/UsersListAdmin";
+import React, { useEffect } from "react";
+import { useAuth } from "../../../hooks/useAuth";
+import UsersListAdmin from "../../../components/Admin/User/UsersListAdmin";
 
-// const UsersList = () => {
+const UsersList = () => {
 
-//     const {allUsers, useAllUsers, useDeleteUser} = useAuth();
+    const {allUsers, useAllUsers, useDeleteUser} = useAuth();
 
-//     useEffect(() => {
-//         useAllUsers();
-//     }, []);
+    useEffect(() => {
+        useAllUsers();
+    }, []);
 
-//     return (
-//         <UsersListAdmin users={allUsers} deleteUser={useDeleteUser}/>
-//     )
-// }
+    return (
+        <UsersListAdmin users={allUsers} deleteUser={useDeleteUser}/>
+    )
+}
 
-// export default UsersList;
+export default UsersList;

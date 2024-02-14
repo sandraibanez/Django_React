@@ -10,6 +10,11 @@ class userSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ( 'id', 'uuid', 'username', 'email', 'password', 'type')
+    def usertoken(context):
+        token = context['token']
+        payload = jwt.decode(token, settings.SECRET_KEY)
+        user = User.objects.get(username=payload['username'])
+        return (user.username, token, user.type)
     def register(context):
         username = context['username']
         email = context['email']

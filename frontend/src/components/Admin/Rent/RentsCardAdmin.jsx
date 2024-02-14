@@ -2,7 +2,7 @@ import React from 'react';
 import './RentsCardAdmin.scss';
 
 export default function RentsCardAdmin ({ rent, index, deleteRent }) {
-
+        console.log(rent);
     const format_data = rent.end_date == null ? 'rented' : rent.end_date;
 
     return (
@@ -12,7 +12,7 @@ export default function RentsCardAdmin ({ rent, index, deleteRent }) {
             <td>{format_data}</td>
             <td>{format_data}</td>
             <td>{rent.initial_slot_id}</td>
-            <td>{rent.scooter_id}</td>
+            <td>{rent.bici_id}</td>
             <td>{rent.user_id}</td>
             <td> 
                 <button className="buttons" onClick={() => deleteRent(rent.id)}>Delete</button>

@@ -22,7 +22,6 @@ export default function Header () {
     const isUser = isAuth ? <li className="link nav-link" onClick={() => logout()}>Log out</li>
     : <li className="link nav-link" onClick={() => redirects.register()}>Sign up</li>;
    
-    // console.log(isAuth);
     const isUsername = isAuth ? <li className="link nav-link position-relative" onClick={() => redirects.profile(user.id)}>{user.username}</li>
     : <li className="link nav-link" onClick={() => redirects.login()}>Sign in</li>;
 
@@ -46,7 +45,6 @@ export default function Header () {
                     <ul className="header-container container-fluid">
                         <li className="link nav-link" onClick={() => redirects.rent()}>Rent</li>
                         <li className="link nav-link" onClick={() => redirects.home()}>Home</li>
-                        <li className="link nav-link" onClick={() => redirects.dashboard()}>Dashboard</li>
                         {isAdminUser}
                         {isUsername}
                         {isUser}

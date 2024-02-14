@@ -1,14 +1,14 @@
-// import React from "react";
-// import { useRent } from "../../../hooks/useRent";
-// import RentsListAdmin from "../../../components/Admin/Rent/RentsListAdmin";
+import React from "react";
+import { useRent } from "../../../hooks/useRent";
+import RentsListAdmin from "../../../components/Admin/Rent/RentsListAdmin";
 
-// const RentsList = () => {
+const RentsList = () => {
 
-//     const {rents, useDeleteRent} = useRent();
+    const {rents, useDeleteRent} = useRent();
 
-//     return (
-//         <RentsListAdmin rents={rents} deleteRent={useDeleteRent}/>
-//     )
-// }
+    return (
+        <RentsListAdmin rents={rents} deleteRent={useDeleteRent}/>
+    )
+}
 
-// export default RentsList;
+export default RentsList;

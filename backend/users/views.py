@@ -50,32 +50,46 @@ class UserInfoView(viewsets.GenericViewSet):
 
         return Response(serializer)
 
-    # def refreshToken(self, request):
-    #     username = request.user
-    #     serializer_context = { 'username': username }
-    #     serializer = userSerializer.refreshToken(serializer_context)
-    #     return Response(serializer)
+    def refreshToken(self, request):
+        username = request.user
+        serializer_context = { 'username': username }
+        serializer = userSerializer.refreshToken(serializer_context)
+        return Response(serializer)
 
-    # def getUserBici(self, request):
-    #     username = request.user
-    #     serializer_context = { 'username': username }
-    #     serializer = BicisSerializer.getUserBici(context=serializer_context)
-    #     return Response(BicisSerializer.to_Bici(serializer))
+    def getUserBici(self, request):
+        username = request.user
+        serializer_context = { 'username': username }
+        serializer = BicisSerializer.getUserBici(context=serializer_context)
+        return Response(BicisSerializer.to_Bici(serializer))
 
     def logout(self, request):
         return Response()
 
 class UserAdminView(viewsets.GenericViewSet):
-    permission_classes = (IsAdmin,)
+    # permission_classes = (IsAdmin,)
 
     def getAllUsers(self, request):
-        users = User.objects.all()
-        users_serializer = userSerializer(users, many=True)
+        bearer = request.headers['Authorization'].split()
+        serializer_context_user = {
+            'token': bearer[1]
+        }
+        serializer_user = userSerializer.usertoken(
+        context=serializer_context_user)
+        if serializer_user[2] == 'admin':
+            users = User.objects.all()
+            users_serializer = userSerializer(users, many=True)
         return Response(users_serializer.data)
 
     def delete(self, request, uuid):
-        user = User.objects.get(uuid=uuid)
-        user.delete()
+        bearer = request.headers['Authorization'].split()
+        serializer_context_user = {
+            'token': bearer[1]
+        }
+        serializer_user = userSerializer.usertoken(
+        context=serializer_context_user)
+        if serializer_user[2] == 'admin':
+            user = User.objects.get(uuid=uuid)
+            user.delete()
         return Response({'data': 'User deleted successfully'})
 
 class ProfileView(viewsets.GenericViewSet):

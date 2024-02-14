@@ -72,13 +72,24 @@ class RentSerializer(serializers.ModelSerializer):
         rent = Rent.objects.get(user_id=user.id, end_slot_id=None)
         return rent
 
+    def getOneRent(context):
+        username = context['username']
+
+        user = User.objects.get(username=username)
+        
+        if username is None:
+            raise serializers.ValidationError('User not found')
+        
+        rent = Rent.objects.get(user_id=user.id, end_slot_id=None)
+        return rent
+
     def bringbackBicis(context):
         username = context['username']
         bici_id = context['bici_id']
         slot_id = context['slot_id']
 
         user = User.objects.get(username=username)
-
+        
         if user is None:
             raise serializers.ValidationError('User not found')
 
@@ -86,17 +97,17 @@ class RentSerializer(serializers.ModelSerializer):
 
         if bici is None:
             raise serializers.ValidationError('Bicis not found')
-
+        
         rent = Rent.objects.get(user_id=user.id, bici_id=bici_id, end_slot_id=None)
-
+        # print (rent.bici_id)
         if rent is None:
             raise serializers.ValidationError('Rent not found')
-
+        
         new_slot = Slot.objects.get(pk=slot_id)
-
-        if new_slot is None or new_slot.bici_id is not None:
-            raise serializers.ValidationError('Slot not found or in use')
-
+        # return new_slot.bici_id
+        # if new_slot is None or new_slot.bici_id is not None:
+        #     raise serializers.ValidationError('Slot not found or in use')
+        # return 'hola'
         if new_slot.status == "manteinance":
             raise serializers.ValidationError('Slot in manteinance')
 

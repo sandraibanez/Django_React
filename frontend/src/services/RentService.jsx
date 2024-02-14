@@ -6,7 +6,8 @@ const RentService = {
         return api().get("/rents");
     },
 
-    rentScooter(slot) {
+    rentBici(slot) {
+        console.log(slot)
         return api().post(`rent/${slot.id}`);
     },
 
@@ -14,8 +15,9 @@ const RentService = {
         return api().get("/rent");
     },
 
-    bringBackScooter(slot) {
-        return api().post("bringbackScooter", { "scooter": { "end_slot": slot.id, "scooter_id": slot.scooter_id } });
+    bringBackBici(slot) {
+        console.log(slot);
+        return api().post("bringbackBicis", { "bici": { "end_slot": slot.id, "bici_id": slot.bici_id } });
     },
 
     deleteRent(id) {

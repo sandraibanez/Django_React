@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import RentService from "../services/RentService";
 
 export function useRent() {
+    console.log('holauserent');
     const navigate = useNavigate();
     const [rents, setRents] = useState([]);
     const [isCorrect, setIsCorrect] = useState(false);
@@ -22,11 +23,11 @@ export function useRent() {
         }
     }, []);
 
-    const useRentScooter = (slot) => {
-        RentService.rentScooter(slot)
+    const useRentBici = (slot) => {
+        RentService.rentBici(slot)
             .then(({ data, status }) => {
                 if (status == 200) {
-                    toast.success("Scooter rented, thank you!")
+                    toast.success("Bici rented, thank you!")
                     setIsCorrect(true);
                     setTimeout(() => { setIsCorrect(false); }, 1000);
                 }
@@ -36,15 +37,15 @@ export function useRent() {
             });
     }
 
-    const useBringBackScooter = (slot) => {
+    const useBringBackBici = (slot) => {
         RentService.getOneRent()
             .then(({ data, status }) => {
                 if (status == 200) {
-                    slot.scooter_id = data.scooter;
-                    RentService.bringBackScooter(slot)
+                    slot.bici_id = data.bici;
+                    RentService.bringBackBici(slot)
                         .then(({ data, status }) => {
                             if (status == 200) {
-                                toast.success("Scooter bringed back, thank you!")
+                                toast.success("Bici bringed back, thank you!")
                                 setIsCorrect(true);
                                 setTimeout(() => { setIsCorrect(false); }, 1000);
                             }
@@ -55,7 +56,7 @@ export function useRent() {
                 }
             })
             .catch(() => {
-                toast.warning("You don't have any scooter")
+                toast.warning("You don't have any bici")
             });
     }
 
@@ -71,5 +72,5 @@ export function useRent() {
     }
     
 
-    return { isCorrect, setIsCorrect, rents, setRents, useRentScooter, useBringBackScooter, useDeleteRent }
+    return { isCorrect, setIsCorrect, rents, setRents, useRentBici, useBringBackBici, useDeleteRent }
 }

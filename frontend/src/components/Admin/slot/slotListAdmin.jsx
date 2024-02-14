@@ -1,16 +1,9 @@
 import React from 'react';
-import './StationsListAdmin.scss';
-import { useNavigate } from "react-router-dom";
+// import './StationsListAdmin.scss';
 
-import StationsCardAdmin from './StationsCardAdmin';
+import StationsslotCardAdmin from './StationsslotCardAdmin';
 
-export default function StationsListAdmin({ stations, deleteStation }) {
-
-    const navigate = useNavigate();
-
-    const redirects = {
-        add_station: () => navigate('/dashboard/stations/add'),
-    }
+export default function StationsListAdmin({ stations }) {
 
     return (
         <div className="stations_list_container">
@@ -23,14 +16,11 @@ export default function StationsListAdmin({ stations, deleteStation }) {
                     </div>
                 </div>
             </div>
-            <button className="button add_button" onClick={() => redirects.add_station()}>Add station</button>
             <table className="table" border="1">
                 <thead className="thead_stations_list">
                     <tr>
                         <th>ID</th>
-                        <th>slug</th>
                         <th>Name</th>
-                        <th>img</th>
                         <th>location</th>
                         <th>Actions</th>
                     </tr>
@@ -39,7 +29,7 @@ export default function StationsListAdmin({ stations, deleteStation }) {
                 <tbody className="tbody_stations_list">
                     {
                         stations.map((station, index) => (
-                            <StationsCardAdmin key={index} station={station} deleteStation={deleteStation} />
+                            <StationsslotCardAdmin key={index} station={station} />
                         ))
                     }
                 </tbody>

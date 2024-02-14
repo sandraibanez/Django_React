@@ -40,7 +40,7 @@ class RentView(viewsets.GenericViewSet):
         context=serializer_context_user)
         username = serializer_user[0]
         data = request.data['bici']
-        serializer_context = {'username': username, 'slot_id': data['end_slot'], 'bici_id': data['bici_id']}
+        serializer_context = {'username': username, 'slot_id': data['end_slot'], 'bici_id': data['bici_id'] }
         serializer = RentSerializer.bringbackBicis(context=serializer_context)
         return Response(RentSerializer.to_rent(serializer))
 

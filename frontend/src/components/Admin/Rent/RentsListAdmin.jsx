@@ -15,7 +15,7 @@ export default function RentsListAdmin ({ rents, deleteRent }) {
                         <th>End Date</th>
                         <th>End Slot</th>
                         <th>Initial Slot</th>
-                        <th>Scooter</th>
+                        <th>Bici</th>
                         <th>User</th>
                         <th>Actions</th>
                     </tr>
