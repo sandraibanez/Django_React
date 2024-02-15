@@ -5,13 +5,13 @@ const Axios = () => {
     let api = null;
 
         api = axios.create({
-            // baseURL: 'http://localhost:8000',
-            baseURL: secrets.URL_DRF,
+            // baseURL: secrets.URL_DRF,
+            baseURL: "http://localhost:8000/api/",
             headers: {
                 "Content-type": "application/json",
             }
         });
-    return api;
+        return api;
 }
 
 export default Axios;

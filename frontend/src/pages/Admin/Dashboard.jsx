@@ -7,11 +7,7 @@ const Dashboard = () => {
 
     const redirects = {
         stations: () => navigate('/dashboard/stations'),
-        slots: () => navigate('/dashboard/slots'),
-        bici: () => navigate('/dashboard/bici'),
-        // users: () => navigate('/dashboard/users'),
-        // rents: () => navigate('/dashboard/rents'),
-        // icidents: () => navigate('/dashboard/incidents'),
+        bici: () => navigate('/dashboard/bici')
     }
     
     return (
@@ -22,10 +18,6 @@ const Dashboard = () => {
             <div className="buttons_box">
                 <button className="button" onClick={() => redirects.stations()}><span>Stations List</span></button>
                 <button className="button" onClick={() => redirects.bici()}><span>Bici List</span></button>
-                <button className="button" onClick={() => redirects.slots()}><span>Slots List</span></button>
-                {/* <button className="button" onClick={() => redirects.users()}><span>Users List</span></button> */}
-                {/* <button className="button" onClick={() => redirects.rents()}><span>Rents List</span></button> */}
-                {/* <button className="button" onClick={() => redirects.icidents()}><span>Incidents List</span></button> */}
             </div>
         </div>
         // <h1>hola</h1>

@@ -11,7 +11,7 @@ export function StationContextProvider({ children }) {
         StationService.getAllStations()
             .then(({data}) => {
                 setStations(data);
-                // console.log(data);
+                console.log(data);
                 
             })
             .catch(e => console.error(e));

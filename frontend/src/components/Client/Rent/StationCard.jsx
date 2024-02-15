@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import stationimg from '../../../assets/img/station1.jpg'; 
 export default function StationCard ({ station }) {
-    // console.log(station.id.img);
+    
     const navigate = useNavigate();
 
     const redirects = {
@@ -16,8 +16,7 @@ export default function StationCard ({ station }) {
                 <div className="row gy-4">
                     <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                         <div className="card">
-                            <div className="card-img" onClick={() => redirects.details(station.slug)}>
-                                    {/* <img src="/stations/img/station1.jpg"/>  */}
+                            <div className="card-img" onClick={() => redirects.details(station.slug)} >
                                     <img src={stationimg} />
                             </div>
                             <div className="card_title">

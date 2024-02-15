@@ -58,7 +58,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\Usuario\Desktop\Django_React'
+set -gx VIRTUAL_ENV 'C:\Users\Usuario\Desktop\2practica_obligatoria\Django_React'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3

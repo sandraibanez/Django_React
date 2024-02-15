@@ -1,16 +1,16 @@
 import React from 'react';
 import SlotCard from './SlotCard';
-// import StationMap from '../Map/StationMap';
+
 
 export default function SlotsList ({ station, slots }) {
 console.log({station,slots});
     return  (
         
         <div className="slots_container">
-            <div id="hero" class="hero d-flex align-items-center">
-                <div class="container">
-                    <div class="row gy-4 d-flex justify-content-between">
-                        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <div id="hero" className="hero d-flex align-items-center">
+                <div className="container">
+                    <div className="row gy-4 d-flex justify-content-between">
+                        <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                             <div className="title">
                                 <h1>Rent a Bici</h1>
                                 <h3>{station.name}</h3>
@@ -40,9 +40,7 @@ console.log({station,slots});
                     ))
                 }
             </div>
-            {/* <div className="station_map">
-                <StationMap station={station}/>
-            </div> */}
+
             
         </div>
                 

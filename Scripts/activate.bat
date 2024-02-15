@@ -1,4 +1,4 @@
-@set "VIRTUAL_ENV=C:\Users\Usuario\Desktop\Django_React"
+@set "VIRTUAL_ENV=C:\Users\Usuario\Desktop\2practica_obligatoria\Django_React"
 
 @set "VIRTUAL_ENV_PROMPT="
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (

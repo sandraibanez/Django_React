@@ -8,20 +8,7 @@ const BiciService = {
 
     getOneBici(slug) {
         return api().get(`bici/${slug}`);
-    },
-
-    createBici(data) {
-        console.log(data);
-        return api().post("/bici", { 'bici': data });
-    },
-
-    updateBici(slug, data) {
-        return api().put(`bici/${slug}`, { 'bici': data });
-    },
-
-    deleteBici(slug) {
-        return api().delete(`bici/${slug}`);
-    },
+    }
     
 };
 

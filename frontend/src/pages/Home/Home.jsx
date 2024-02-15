@@ -1,12 +1,12 @@
-
-import React, { useState } from 'react';
+//React,
+// import  { useState } from 'react';
 import './Home.scss';
-import { useStations } from "../../hooks/useStations.jsx";
+// import { useStations } from "../../hooks/useStations.jsx";
 // import StationsMap from "../../components/Client/Map/StationsMap.jsx";
 // // import SpinnerLoading from "../../components/SpinnerLoading/SpinnerLoading.jsx";
 console.log('hola home');
 export default function Home() {
-    const {stations} = useStations();
+   // const {stations} = useStations();
     // const [show, setShow] = useState(null);
     
     return (

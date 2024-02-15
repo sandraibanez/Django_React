@@ -1,0 +1,9 @@
+PG_USER=postgres
+PG_PASSWORD=sandra2001
+PG_DB=ontibici
+PG_PORT=5432
+PG_HOST=postgres_container
+POSTGRES_PASSWORD=sandra2001 
+POSTGRES_DB=ontibici
+PGADMIN_DEFAULT_EMAIL=sandrasoleribanez@gmail.com
+PGADMIN_DEFAULT_PASSWORD=sandra2001

@@ -32,7 +32,7 @@ export-env {
       }
     }
 
-    let virtual_env = 'C:\Users\Usuario\Desktop\Django_React'
+    let virtual_env = 'C:\Users\Usuario\Desktop\2practica_obligatoria\Django_React'
     let bin = 'Scripts'
 
     let is_windows = ($nu.os-info.family) == 'windows'
