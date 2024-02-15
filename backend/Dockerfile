@@ -11,8 +11,8 @@ ENV POSTGRES_PASSWORD sandra2001
 ENV POSTGRES_DB ontibici
 FROM dpage/pgadmin4
 
-RUN chmod +x server.sh
-ENTRYPOINT ["./server.sh"]
+# RUN chmod +x server.sh
+# ENTRYPOINT ["./server.sh"]
 
 FROM python:3
 
@@ -38,10 +38,8 @@ COPY wait-for-postgres.sh /app/wait-for-postgres.sh
 RUN chmod +x /app/wait-for-postgres.sh
 
 # Set executable permissions for scripts
-RUN chmod +x /app/django.sh
-# RUN python manage.py migrate
-RUN chmod +x entrypoint.sh
-ENTRYPOINT ["./entrypoint.sh"]
+RUN chmod +x entrypoint2.sh
+ENTRYPOINT ["./entrypoint2.sh"]
 
 
 # Expose port
@@ -49,4 +47,3 @@ EXPOSE 8000
 
 # entrypoint to run the django.sh file
 CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
-# CMD [  "python", "manage.py", "migrate" ]
