@@ -44,6 +44,7 @@ Una vez clonado el proyecto, sigue los siguientes pasos:
 
 - Elimina la carpeta `node_modules` del frontend.
 - Desde la consola, en la ruta del frontend, ejecuta el comando `npm install` o `npm i` para reinstalar las dependencias y crear la carpeta `node_modules`.
+- Sino realiza esos pasos al crear los contenedores el frontend mostrara por consola que tiene el sigiente error relacionado con `react-scripts` y no se iniciara el contendedor.
 
 ### 4. Ejecución del Proyecto
 
