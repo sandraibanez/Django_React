@@ -2,6 +2,15 @@
 
 Este proyecto consiste en un entorno dockerizado que incluye React, Django, PostgreSQL y nginx.
 
+# Índice
+
+1. [Instalación de Docker](#instalación-de-docker)
+2. [Imágenes necesarias](#Imágenes-Docker)
+3. [Configuración del Proyecto](#configuración-del-proyecto)
+4. [Creación de Contenedores](#creación-de-contenedores)
+5. [Pasos Finales](#pasos-finales)
+
+
 ## Pasos para probar el funcionamiento del proyecto
 
 ### 1. Instalación de Docker
