@@ -4,7 +4,7 @@ Este proyecto consiste en un entorno dockerizado que incluye React, Django, Post
 
 # Índice
 
-1. [Instalación de Docker](#instalación-de-docker)
+1. [Instalación de Docker](#Instalación-de-Docker)
 2. [Imágenes necesarias](#Imágenes-Docker)
 3. [Configuración del Proyecto](#configuración-del-proyecto)
 4. [Creación de Contenedores](#creación-de-contenedores)
