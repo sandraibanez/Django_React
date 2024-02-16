@@ -13,7 +13,7 @@ Este proyecto consiste en un entorno dockerizado que incluye React, Django, Post
 
 ## Pasos para probar el funcionamiento del proyecto
 
-### 1. Instalación de Docker
+## 1. Instalación de Docker
 
 Asegúrate de tener Docker instalado en tu sistema.
 
