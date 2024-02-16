@@ -5,9 +5,9 @@ Este proyecto consiste en un entorno dockerizado que incluye React, Django, Post
 # Índice
 
 1. [Instalación de Docker](#1-Instalación-de-Docker)
-2. [Imágenes necesarias](#Imágenes-Docker)
-3. [Configuración del Proyecto](#configuración-del-proyecto)
-4. [Creación de Contenedores](#creación-de-contenedores)
+2. [Imágenes necesarias](#2-Imágenes-Docker)
+3. [Configuración del Proyecto](#3-Configuración-del-Proyecto)
+4. [Creación de Contenedores](#4-Ejecución-del-Proyecto)
 5. [Pasos Finales](#pasos-finales)
 
 
@@ -17,7 +17,7 @@ Este proyecto consiste en un entorno dockerizado que incluye React, Django, Post
 
 Asegúrate de tener Docker instalado en tu sistema.
 
-### 2. Imágenes Docker
+## 2. Imágenes Docker
 
 Asegúrate de tener las imágenes Docker necesarias para el proyecto.
 
