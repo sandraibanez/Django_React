@@ -6,13 +6,8 @@ WORKDIR /app
 COPY ./db/dump.sql /docker-entrypoint-initdb.d/
 
 ADD ./db/dump.sql /docker-entrypoint-initdb.d
-ENV POSTGRES_USER postgres
-ENV POSTGRES_PASSWORD sandra2001
-ENV POSTGRES_DB ontibici
-FROM dpage/pgadmin4
 
-# RUN chmod +x server.sh
-# ENTRYPOINT ["./server.sh"]
+
 
 FROM python:3
 
@@ -38,8 +33,8 @@ COPY wait-for-postgres.sh /app/wait-for-postgres.sh
 RUN chmod +x /app/wait-for-postgres.sh
 
 # Set executable permissions for scripts
-RUN chmod +x entrypoint2.sh
-ENTRYPOINT ["./entrypoint2.sh"]
+RUN chmod +x backend.sh
+ENTRYPOINT ["./backend.sh"]
 
 
 # Expose port

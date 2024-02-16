@@ -7,3 +7,4 @@ POSTGRES_PASSWORD=sandra2001
 POSTGRES_DB=ontibici
 PGADMIN_DEFAULT_EMAIL=sandrasoleribanez@gmail.com
 PGADMIN_DEFAULT_PASSWORD=sandra2001
+DB_DRIVER=django.db.backends.postgresql
