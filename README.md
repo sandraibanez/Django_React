@@ -22,14 +22,14 @@ Una vez clonado el proyecto, sigue los siguientes pasos:
   
   ##### 3.1.1 Cambia el nombre del Dockerfile del backend
 
-  Cambia el nombre del Dockerfile del backend a exactamente el mismo nombre del archivo creado anteriormente para darle permisos y permitir que se ejecute.
+  Cambia el nombre del Dockerfile del backend donde aparece el nombre del backend.sh a exactamente el mismo nombre del archivo creado anteriormente para darle permisos y permitir que se ejecute.
 
   ##### 3.1.2 Solución de problemas de conexión
 
-  Si no se realizan los pasos anteriores, es posible que al iniciar los contenedores se muestre un mensaje de error de conexión. En este caso, sigue estos pasos alternativos:
+  Si no se realizan el paso anterior, es posible que al iniciar los contenedores se muestre un mensaje de error de conexión en el contenedor del backend. En este caso, sigue estos pasos alternativos:
   
   - Accede a pgAdmin y realiza los pasos explicados más adelante.
-  - Una vez dentro de pgAdmin, detén y vuelve a iniciar el contenedor del backend. Esto debería solucionar el problema.
+  - Una vez dentro de pgAdmin, detén y vuelve a iniciar el contenedor del backend. Esto debería solucionar el problema. Es preferible que se haga el paso explicado en el apartado 3.1.1
 
 #### 3.2 Configuración del Frontend
 
