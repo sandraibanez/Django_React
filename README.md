@@ -53,5 +53,5 @@ Una vez clonado el proyecto, sigue los siguientes pasos:
 
 ### 4. Ejecución del Proyecto
 
-Una vez realizados los cambios anteriores, ejecuta el siguiente comando en la ruta donde se encuentra el archivo `docker-compose.yml`:
+Una vez realizados los cambios anteriores, ejecuta el siguiente comando `docker-compose up` en la ruta donde se encuentra el archivo `docker-compose.yml` y se crearan las imagen, los volumenes y los contenedores
 
