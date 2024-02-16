@@ -42,6 +42,9 @@ Una vez clonado el proyecto, sigue los siguientes pasos:
   - Accede a pgAdmin y realiza los pasos explicados más adelante.
   - Una vez dentro de pgAdmin, detén y vuelve a iniciar el contenedor del backend. Esto debería solucionar el problema. Es preferible que se haga el paso explicado en el apartado 3.1.1 y si se ha hecho esos pasos y aun asi persiste el problema intente realizar los pasos de este apartado el 3.1.2
 
+ ##### 3.1.3 Solucion de problemas del backend
+  -  si haciendo los cambios del [3.1.1](3.1.1-Cambia-el-nombre-del-Dockerfile-del-backend) si aun asi aparece el mismo problema del apartado [3.1.2](3.1.2-Solución-de-problemas-de-conexión) hay que realizar la misma solucion que en el aparatdo [3.1.2](3.1.2-Solución-de-problemas-de-conexión)
+
 #### 3.2 Configuración del Frontend
 
 - Elimina la carpeta `node_modules` del frontend.
