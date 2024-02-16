@@ -23,6 +23,8 @@ Asegúrate de tener las imágenes Docker necesarias para el proyecto.
 
 ### 3. Configuración del Proyecto
 
+cambia a la rama main_docker_compose situandote en el projecto colonado y mediante el comando `git checkout main_docker_compose`
+
 Una vez clonado el proyecto, sigue los siguientes pasos:
 
 #### 3.1 Configuración del Backend
