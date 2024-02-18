@@ -8,10 +8,10 @@ Este proyecto consiste en un entorno dockerizado que incluye React, Django, Post
 2. [Imágenes necesarias](#2-Imágenes-Docker)
 3. [Configuración del Proyecto](#3-Configuración-del-Proyecto)
 4. [Creación de Contenedores](#4-Ejecución-del-Proyecto)
-5. [Pasos Finales](#pasos-finales)
+5. [Configuracion del pgadmin](#5-Configuracion-del-pgadmin)
 
 
-## Pasos para probar el funcionamiento del proyecto
+# Pasos para probar el funcionamiento del proyecto
 
 ## 1. Instalación de Docker
 
@@ -87,7 +87,7 @@ Se cambia el nombre del archivo a por el nuevo:
   
 - Sino realiza esos pasos al crear los contenedores el frontend mostrara por consola que tiene el sigiente error relacionado con `react-scripts` y no se iniciara el contendedor.
 
-### 4. Ejecución del Proyecto
+## 4. Ejecución del Proyecto
 
 Una vez realizados los cambios anteriores, ejecuta el siguiente comando `docker-compose up` en la ruta donde se encuentra el archivo `docker-compose.yml` y se crearan las imagen, los volumenes y los contenedores
 
@@ -130,5 +130,41 @@ Una vez se esta creado deveria aparecer algo asi por consola:
 
     ![Ejemplo de imagen](img/6.15.PNG)
 
+    ### Creacion del contendor, las imagenes y de los volumenes
+
+      ![Ejemplo de imagen](img/7.PNG)
+
+      ![Ejemplo de imagen](img/7.1.PNG)
+
+      ![Ejemplo de imagen](img/7.2.PNG)
+
+## 5.- Configuracion del pgadmin
+
+  -  Hay que poner el correo y la contraseña del .env 
+    
+      ![Ejemplo de imagen](img/8.PNG)
+
+      ![Ejemplo de imagen](img/8.1.PNG)
+
+  -  Elige el nombre que quieras para registrar el servidor
+
+      ![Ejemplo de imagen](img/8.2.PNG)
+    
+  -  En nombre/direccion del servidor hay que poner el nombre del contenedor del db en este caso `postgres_container`, la contraseña es `sandra2001` y el nombre de usuario es el de `postgres` aunque ponga sandrasoler, sino se pone asi no funcionara
+
+      ![Ejemplo de imagen](img/8.3.PNG)
+
+  - Una vez creado se vera algo asi:
+
+    ![Ejemplo de imagen](img/8.4.PNG)
+
+  -  Al entrar en ontibici se vera algo asi:
+
+    ![Ejemplo de imagen](img/8.5.PNG)
+
+  - Las tablas se veran asi:
+
+    ![Ejemplo de imagen](img/8.6.PNG)
+    
     
     
