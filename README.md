@@ -58,6 +58,8 @@ Se crea el nuevo archivo:
 
 ![Ejemplo de imagen](img/4.4.PNG)
 
+Se cambia el nombre del archivo a por el nuevo:
+
 ![Ejemplo de imagen](img/4.5.PNG)
 
 ![Ejemplo de imagen](img/4.6.PNG)
