@@ -8,8 +8,9 @@ Este proyecto consiste en un entorno dockerizado que incluye React, Django, Post
 2. [Imágenes necesarias](#2-Imágenes-Docker)
 3. [Configuración del Proyecto](#3-Configuración-del-Proyecto)
 4. [Creación de Contenedores](#4-Ejecución-del-Proyecto)
-5. [Configuracion del pgadmin](#5--configuracion-del-pgadmin)
-
+5. [Configuracion del pgadmin](#5-configuracion-del-pgadmin)
+6. [Comprobacion del backend](#6-Comprobacion-del-backend)
+7. [Comprobacion del frontend](#7-Comprobacion-del-frontend)
 
 # Pasos para probar el funcionamiento del proyecto
 
@@ -68,7 +69,7 @@ Se cambia el nombre del archivo a por el nuevo:
 
   Si no se realizan el paso anterior, es posible que al iniciar los contenedores se muestre un mensaje de error de conexión en el contenedor del backend. En este caso, sigue estos pasos alternativos:
   
-  - Accede a pgAdmin y realiza los pasos explicados más adelante [5](#5--configuracion-del-pgadmin).
+  - Accede a pgAdmin y realiza los pasos explicados más adelante [5](#5-configuracion-del-pgadmin).
   - Una vez dentro de pgAdmin, detén y vuelve a iniciar el contenedor del backend. Esto debería solucionar el problema. Es preferible que se haga el paso explicado en el apartado 3.1.1 y si se ha hecho esos pasos y aun asi persiste el problema intente realizar los pasos de este apartado el 3.1.2
 
    #### 3.1.3 Solucion de problemas del backend
@@ -138,7 +139,7 @@ Una vez se esta creado deveria aparecer algo asi por consola:
 
       ![Ejemplo de imagen](img/7.2.PNG)
 
-## 5.- Configuracion del pgadmin
+## 5. Configuracion del pgadmin
 
   -  Hay que poner el correo y la contraseña del .env 
     
@@ -166,5 +167,42 @@ Una vez se esta creado deveria aparecer algo asi por consola:
 
     ![Ejemplo de imagen](img/8.6.PNG)
     
-    
-    
+## 6. Comprobacion del backend
+
+  - Cuando entras se vera algo así y hay que poner `/api/` como se muestra en la imagen
+
+    ![Ejemplo de imagen](img/9.PNG)
+
+  -  Cuando se pone `/api/` te muestra las rutas que puedes hacer
+
+    ![Ejemplo de imagen](img/9.1.PNG)
+
+  -  Ejemplos de las rutas
+
+    ![Ejemplo de imagen](img/9.2.PNG)
+
+    ![Ejemplo de imagen](img/9.3.PNG)
+
+    ![Ejemplo de imagen](img/9.4.PNG)
+
+    ![Ejemplo de imagen](img/9.5.PNG)
+
+    ![Ejemplo de imagen](img/9.6.PNG)
+
+##7. Comprobacion del frontend
+
+  -  En el frontend hay tres vistas en `rent` hay las 3 estaciones que estan en la base de datos.
+
+      ![Ejemplo de imagen](img/10.PNG)
+     
+  -  En el `home` no hay nada que mostrar solo el nombre de la pagina
+
+      ![Ejemplo de imagen](img/10.1.PNG)
+
+  -  En el dashboard se muestran dos botones
+
+      ![Ejemplo de imagen](img/10.2.PNG)
+     
+      ![Ejemplo de imagen](img/10.3.PNG)
+     
+      ![Ejemplo de imagen](img/10.4.PNG)
