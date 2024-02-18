@@ -8,7 +8,7 @@ Este proyecto consiste en un entorno dockerizado que incluye React, Django, Post
 2. [Imágenes necesarias](#2-Imágenes-Docker)
 3. [Configuración del Proyecto](#3-Configuración-del-Proyecto)
 4. [Creación de Contenedores](#4-Ejecución-del-Proyecto)
-5. [Configuracion del pgadmin](#5-Configuracion-del-pgadmin)
+5. [Configuracion del pgadmin](#5--configuracion-del-pgadmin)
 
 
 # Pasos para probar el funcionamiento del proyecto
@@ -159,8 +159,8 @@ Una vez se esta creado deveria aparecer algo asi por consola:
     ![Ejemplo de imagen](img/8.4.PNG)
 
   -  Al entrar en ontibici se vera algo asi:
-
-    ![Ejemplo de imagen](img/8.5.PNG)
+    
+     ![como se la primera se crea ontibici y aun no ha entrado](img/8.5.PNG)
 
   - Las tablas se veran asi:
 
