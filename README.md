@@ -177,15 +177,10 @@ Una vez se esta creado deveria aparecer algo asi por consola:
     ![Ejemplo de imagen](img/9.1.PNG)
 
   -  Ejemplos de las rutas
-
     ![Ejemplo de imagen](img/9.2.PNG)
-
     ![Ejemplo de imagen](img/9.3.PNG)
-
     ![Ejemplo de imagen](img/9.4.PNG)
-
     ![Ejemplo de imagen](img/9.5.PNG)
-
     ![Ejemplo de imagen](img/9.6.PNG)
 
 ##7. Comprobacion del frontend
