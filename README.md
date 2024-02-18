@@ -11,6 +11,7 @@ Este proyecto consiste en un entorno dockerizado que incluye React, Django, Post
 5. [Configuracion del pgadmin](#5-configuracion-del-pgadmin)
 6. [Comprobacion del backend](#6-Comprobacion-del-backend)
 7. [Comprobacion del frontend](#7-Comprobacion-del-frontend)
+8. [Puertos](#8.-Puertos)
 
 # Pasos para probar el funcionamiento del proyecto
 
@@ -200,3 +201,13 @@ Una vez se esta creado deveria aparecer algo asi por consola:
       ![Ejemplo de imagen](img/10.3.PNG)
      
       ![Ejemplo de imagen](img/10.4.PNG)
+
+## 8. Puertos
+
+| contenedor | puerto  |
+|------------|-------- |
+|postgres    |5434:5434|
+|pgadmin     |8888:80  |
+|backend     |8000:8000|
+|frontend    |3000:3000|
+|loadbalancer-nginx|8008:8080|
