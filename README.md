@@ -183,7 +183,7 @@ Una vez se esta creado deveria aparecer algo asi por consola:
     ![Ejemplo de imagen](img/9.5.PNG)
     ![Ejemplo de imagen](img/9.6.PNG)
 
-##7. Comprobacion del frontend
+## 7. Comprobacion del frontend
 
   -  En el frontend hay tres vistas en `rent` hay las 3 estaciones que estan en la base de datos.
 
