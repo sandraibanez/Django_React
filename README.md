@@ -210,4 +210,4 @@ Una vez se esta creado deveria aparecer algo asi por consola:
 |pgadmin     |8888:80  |
 |backend     |8000:8000|
 |frontend    |3000:3000|
-|loadbalancer-nginx|8008:8080|
+|loadbalancer-nginx|8080:8080|
