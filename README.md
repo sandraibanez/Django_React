@@ -20,7 +20,7 @@ Asegúrate de tener Docker instalado en tu sistema.
 ## 2. Imágenes Docker
 
 Asegúrate de tener las imágenes Docker necesarias para el proyecto.
-![Ejemplo de imagen](img/0.png)
+![Ejemplo de imagen](img/0.PNG)
 ![Ejemplo de imagen](img/0.1.png)
 ![Ejemplo de imagen](img/0.2.png)
 ![Ejemplo de imagen](img/0.3.png)
