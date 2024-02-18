@@ -78,10 +78,57 @@ Se cambia el nombre del archivo a por el nuevo:
 #### 3.2 Configuración del Frontend
 
 - Elimina la carpeta `node_modules` del frontend.
+  
+  ![Ejemplo de imagen](img/5.PNG)
+  
 - Desde la consola, en la ruta del frontend, ejecuta el comando `npm install` o `npm i` para reinstalar las dependencias y crear la carpeta `node_modules`.
+  
+  ![Ejemplo de imagen](img/5.2.PNG)
+  
 - Sino realiza esos pasos al crear los contenedores el frontend mostrara por consola que tiene el sigiente error relacionado con `react-scripts` y no se iniciara el contendedor.
 
 ### 4. Ejecución del Proyecto
 
 Una vez realizados los cambios anteriores, ejecuta el siguiente comando `docker-compose up` en la ruta donde se encuentra el archivo `docker-compose.yml` y se crearan las imagen, los volumenes y los contenedores
 
+![Ejemplo de imagen](img/6.PNG)
+
+![Ejemplo de imagen](img/6.1.PNG)
+
+Una vez se esta creado deveria aparecer algo asi por consola:
+  - Creacion de la imagen del backend
+    
+      ![Ejemplo de imagen](img/6.2.PNG)
+
+  - Creacion de la imagen del frontend
+
+    ![Ejemplo de imagen](img/6.3.PNG)
+
+  - Creacion de los contenedores y de los volumenes:
+
+    ![Ejemplo de imagen](img/6.4.PNG)
+
+    ![Ejemplo de imagen](img/6.5.PNG)
+
+    ![Ejemplo de imagen](img/6.6.PNG)
+
+    ![Ejemplo de imagen](img/6.7.PNG)
+
+    ![Ejemplo de imagen](img/6.8.PNG)
+
+    ![Ejemplo de imagen](img/6.9.PNG)
+
+    ![Ejemplo de imagen](img/6.10.PNG)
+
+    ![Ejemplo de imagen](img/6.11.PNG)
+
+    ![Ejemplo de imagen](img/6.12.PNG)
+    
+    ![Ejemplo de imagen](img/6.13.PNG)
+
+    ![Ejemplo de imagen](img/6.14.PNG)
+
+    ![Ejemplo de imagen](img/6.15.PNG)
+
+    
+    
