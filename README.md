@@ -41,10 +41,26 @@ Una vez clonado el proyecto, sigue los siguientes pasos:
 ### 3.1 Configuración del Backend
 
 - Crea un nuevo archivo `.sh` en la carpeta del backend con el mismo contenido que el archivo denominado `backend.sh`.
+
+![Ejemplo de imagen](img/4.PNG)
+
+![Ejemplo de imagen](img/4.1.PNG)
+
+Se crea el nuevo archivo:
+
+![Ejemplo de imagen](img/4.2.PNG)
+
+![Ejemplo de imagen](img/4.3.PNG)
   
   #### 3.1.1 Cambia el nombre del Dockerfile del backend
 
   Cambia el nombre del Dockerfile del backend donde aparece el nombre del backend.sh a exactamente el mismo nombre del archivo creado anteriormente para darle permisos y permitir que se ejecute.
+
+![Ejemplo de imagen](img/4.4.PNG)
+
+![Ejemplo de imagen](img/4.5.PNG)
+
+![Ejemplo de imagen](img/4.6.PNG)
 
   #### 3.1.2 Solución de problemas de conexión
 
