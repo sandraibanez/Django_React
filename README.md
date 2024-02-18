@@ -174,7 +174,6 @@ Una vez se esta creado deveria aparecer algo asi por consola:
     ![Ejemplo de imagen](img/9.PNG)
 
   -  Cuando se pone `/api/` te muestra las rutas que puedes hacer
-
     ![Ejemplo de imagen](img/9.1.PNG)
 
   -  Ejemplos de las rutas
