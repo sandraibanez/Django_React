@@ -26,7 +26,8 @@ Asegúrate de tener las imágenes Docker necesarias para el proyecto.
 ![Ejemplo de imagen](img/0.3.PNG)
 ## 3. Configuración del Proyecto
 
-cambia a la rama main_docker_compose situandote en el projecto colonado y mediante el comando `git checkout main_docker_compose`
+Cambia a la rama main_docker_compose situandote en el projecto colonado y mediante el comando `git checkout main_docker_compose`
+![1](https://github.com/sandraibanez/Django_React/assets/128723982/c8baf1c1-1fbc-404b-965d-566bf0021d8a)
 
 Una vez clonado el proyecto, sigue los siguientes pasos:
 
