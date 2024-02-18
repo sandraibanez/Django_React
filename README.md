@@ -72,8 +72,8 @@ Se cambia el nombre del archivo a por el nuevo:
   - Una vez dentro de pgAdmin, detén y vuelve a iniciar el contenedor del backend. Esto debería solucionar el problema. Es preferible que se haga el paso explicado en el apartado 3.1.1 y si se ha hecho esos pasos y aun asi persiste el problema intente realizar los pasos de este apartado el 3.1.2
 
    #### 3.1.3 Solucion de problemas del backend
-   
-    - Si haciendo los cambios del [3.1.1](#311-cambia-el-nombre-del-dockerfile-del-backend) aun asi aparece el mismo problema del apartado [3.1.2](#312-Solución-de-problemas-de-conexión) hay que realizar la misma solucion que en el aparatdo [3.1.2](#312-Solución-de-problemas-de-conexión)
+   - Si haciendo los cambios del [3.1.1](#311-cambia-el-nombre-del-dockerfile-del-backend) aún así aparece el mismo problema del apartado [3.1.2](#312-Solución-de-problemas-de-conexión) hay que realizar la misma solucion que en el apartado 3.1.2
+  
 
 #### 3.2 Configuración del Frontend
 
