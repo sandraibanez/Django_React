@@ -21,9 +21,9 @@ Asegúrate de tener Docker instalado en tu sistema.
 
 Asegúrate de tener las imágenes Docker necesarias para el proyecto.
 ![Ejemplo de imagen](img/0.PNG)
-![Ejemplo de imagen](img/0.1.png)
-![Ejemplo de imagen](img/0.2.png)
-![Ejemplo de imagen](img/0.3.png)
+![Ejemplo de imagen](img/0.1.PNG)
+![Ejemplo de imagen](img/0.2.PNG)
+![Ejemplo de imagen](img/0.3.PNG)
 ## 3. Configuración del Proyecto
 
 cambia a la rama main_docker_compose situandote en el projecto colonado y mediante el comando `git checkout main_docker_compose`
