@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-// import './StationsCardAdmin.scss';
 
 export default function StationsslotCardAdmin ({ station, index}) {
     console.log(index, station);

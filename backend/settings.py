@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'users.apps.UsersConfig',
-    'rent.apps.RentConfig'
+    'rent.apps.RentConfig',
+    'incidents.apps.IncidentsConfig'
 ]
 
 MIDDLEWARE = [
