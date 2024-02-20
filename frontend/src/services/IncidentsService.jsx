@@ -1,43 +1,76 @@
-// import api from "./api"
+import api from "./api"
 
-// const IncidentsService = {
+const IncidentsService = {
 
-//     getAllIncidentsSlots() {
-//         return api().get("/slots_incidents");
-//     },
+    // get user
+    getAllIncidentsSlots() {
+        return api().get("/incidentsslot");
+    },
 
-//     getAllIncidentsScooters() {
-//         return api().get("/scooters_incidents");
-//     },
+    getAllIncidentsBici() {
+        return api().get("/incidentsbici");
+    },
 
-//     getIncidentsUser() {
-//         return api().get("/slot_incidentsUser");
-//     },
+    getAllIncidentsStation() {
+        return api().get("/incidentsstation");
+    },
 
-//     createSlotIncidence(data) {
-//         return api().post("/slot_incidence", { 'slot_incidence': data });
-//     },
+    // create user
+    createSlotIncidence(data) {
+        console.log(data);
+        return api().post("/slot_incidence", { 'slot_incidence': data });
+    },
 
-//     createScooterIncidence(data) {
-//         return api().post("/scooter_incidence", { 'scooter_incidence': data });
-//     },
+    createBiciIncidence(data) {
+        return api().post("/bici_incidence", { 'bici_incidence': data });
+    },
 
-//     updateSlotIncidence(id, data) {
-//         return api().put(`slot_incidence/${id}`, data);
-//     },
+    createStationIncidence(data) {
+        console.log(data);
+        return api().post("/station_incidence", { 'station_incidence': data });
+    },
 
-//     updateScooterIncidence(id, data) {
-//         return api().put(`scooter_incidence/${id}`, data);
-//     },
+    // get admin
+    getAllIncidentsSlotsadmin() {
+        return api().get("/incidentsadslot");
+    },
 
-//     deleteSlotIncidence(id) {
-//         return api().delete(`slot_incidence/${id}`);
-//     },
+    getAllIncidentsBiciadmin() {
+        return api().get("/incidentsadbici");
+    },
 
-//     deleteScooterIncidence(id) {
-//         return api().delete(`scooter_incidence/${id}`);
-//     },
+    getAllIncidentsStationadmin() {
+        return api().get("/incidentsadstation");
+    },
     
-// };
+    // update admin
+    updateSlotIncidence(id, data) {
+        return api().put(`slot_incidence/${id}`, data);
+    },
 
-// export default IncidentsService;
+    updateBiciIncidence(id, data) {
+        return api().put(`bici_incidence/${id}`, data);
+    },
+
+    updateStationIncidence(id, data) {
+        return api().put(`station_incidence/${id}`, data);
+    },
+
+    // delete admin
+    deleteSlotIncidence(id) {
+        return api().delete(`slotincidence/${id}`);
+    },
+
+    deleteBiciIncidence(id) {
+        return api().delete(`biciincidence/${id}`);
+    },
+
+    deleteStationIncidence(id) {
+        return api().delete(`stationincidence/${id}`);
+    },
+
+    
+    
+};
+
+export default IncidentsService;

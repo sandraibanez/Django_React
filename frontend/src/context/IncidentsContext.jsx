@@ -1,35 +1,46 @@
-// import React, { useState, useEffect, useContext } from 'react'
-// import IncidentsService from '../services/IncidentsService'
-// import AuthContext from './AuthContext';
+import React, { useState, useEffect, useContext } from 'react'
+import IncidentsService from '../services/IncidentsService'
+import AuthContext from './AuthContext';
 
-// const Context = React.createContext({})
+const Context = React.createContext({})
 
-// export function IncidentsContextProvider({ children }) {
-//     const { isAdmin } = useContext(AuthContext);
-//     const [incidentsSlots, setIncidentsSlots] = useState([]);
-//     const [incidentsScooters, setIncidentsScooters] = useState([]);
+export function IncidentsContextProvider({ children }) {
+    const { isAdmin } = useContext(AuthContext);
+    const [incidentsSlots, setIncidentsSlots] = useState([]);
+    const [incidentsBici, setIncidentsBici] = useState([]);
+    const [incidentsStation, setIncidentsStation] = useState([]);
 
-//     useEffect(function () {
-//         if (isAdmin) {
-//             IncidentsService.getAllIncidentsSlots()
-//                 .then(({ data }) => {
-//                     setIncidentsSlots(data);
-//                 })
-//         }
-//     }, [setIncidentsSlots, isAdmin])
+    useEffect(function () {
+        if (isAdmin) {
+            IncidentsService.getAllIncidentsSlotsadmin()
+                .then(({ data }) => {
+                    setIncidentsSlots(data);
+                })
+        }
+    }, [setIncidentsSlots, isAdmin])
 
-//     useEffect(function () {
-//         if (isAdmin) {
-//             IncidentsService.getAllIncidentsScooters()
-//                 .then(({ data }) => {
-//                     setIncidentsScooters(data);
-//                 })
-//         }
-//     }, [setIncidentsScooters, isAdmin])
+    useEffect(function () {
+        if (isAdmin) {
+            IncidentsService.getAllIncidentsBiciadmin()
+                .then(({ data }) => {
+                    setIncidentsBici(data);
+                })
+        }
+    }, [setIncidentsSlots, isAdmin])
 
-//     return <Context.Provider value={{ incidentsSlots, setIncidentsSlots, incidentsScooters, setIncidentsScooters }}>
-//         {children}
-//     </Context.Provider>
-// }
+    useEffect(function () {
+        if (isAdmin) {
+            IncidentsService.getAllIncidentsStationadmin()
+                .then(({ data }) => {
+                    setIncidentsStation(data);
+                })
+        }
+    }, [setIncidentsSlots, isAdmin])
 
-// export default Context
+
+    return <Context.Provider value={{ incidentsSlots, setIncidentsSlots, incidentsBici, setIncidentsBici,incidentsStation, setIncidentsStation}}>
+        {children}
+    </Context.Provider>
+}
+
+export default Context

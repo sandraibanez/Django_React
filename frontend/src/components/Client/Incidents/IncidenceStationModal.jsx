@@ -9,9 +9,9 @@ import { useIncidents } from "../../../hooks/useIncidents";
 import { useNavigate } from "react-router-dom";
 Modal.setAppElement('#root');
 
-export default function IncidenceSlotModal ({ openModal, setOpenModal, incidenceType, id }) {
+export default function IncidenceStationModal ({ openModal, setOpenModal, incidenceType, id }) {
     const navigate = useNavigate();
-    const { isCorrect, useAddSlotIncidence } = useIncidents();
+    const { isCorrect, useAddStationIncidence } = useIncidents();
 
     const validators = Yup.object().shape({
         title: Yup.string().required('*Title is required').min(3, '*Title must be at least 3 characters').max(25, '*Title must be at most 25 characters'),
@@ -29,12 +29,12 @@ export default function IncidenceSlotModal ({ openModal, setOpenModal, incidence
     };
 
     const onSubmit = data => {
-        if (incidenceType == 'slot') {
-            data.slot_id = id;
-            useAddSlotIncidence(data);
+        if (incidenceType == 'station') {
+            data.station_id = id;
+            useAddStationIncidence(data);
         } else {
-            // data.scooter_id = id;
-            // useAddScooterIncidence(data);
+            data.station_id = id;
+            useAddStationIncidence(data);
         }
 
     }

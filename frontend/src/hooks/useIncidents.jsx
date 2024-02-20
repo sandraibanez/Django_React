@@ -1,108 +1,189 @@
-// import React, { useEffect, useCallback, useState, useContext } from "react";
-// import IncidentsContext from '../context/IncidentsContext';
-// import IncidentsService from '../services/IncidentsService';
-// import { toast } from 'react-toastify'
-// import AuthContext from "../context/AuthContext";
+import React, { useEffect, useCallback, useState, useContext } from "react";
+import IncidentsContext from '../context/IncidentsContext';
+import IncidentsService from '../services/IncidentsService';
+import { toast } from 'react-toastify'
+import AuthContext from "../context/AuthContext";
 
-// export function useIncidents() {
-//     const { isAuth } = useContext(AuthContext);
-//     const { incidentsSlots, setIncidentsSlots, incidentsScooters, setIncidentsScooters } = useContext(IncidentsContext);
-//     const [userIncidents, setUserIncidents] = useState([]);
-//     const [isCorrect, setIsCorrect] = useState(false);
+export function useIncidents() {
+    const { isAuth } = useContext(AuthContext);
+    const { incidentsSlots,incidentsBici,incidentsStation, setIncidentsSlots, setIncidentsBici,setIncidentsStation } = useContext(IncidentsContext);
+    const [userIncidents, setUserIncidents] = useState([]);
+    const [isCorrect, setIsCorrect] = useState(false);
+    const [incidentsSlotsUser, setIncidentsSlotsUser] = useState([]);
+    const [incidentsStationsUser, setIncidentsStationUser] = useState([]);
+    useEffect(function () {
+        if (isAuth) {
+            IncidentsService.getAllIncidentsSlots()
+                .then(({ data }) => {
+                    setIncidentsSlotsUser(data);
+                    // console.log( data);
+                })
+        }
+    }, [setIncidentsSlotsUser,isAuth])
 
-//     const useAddSlotIncidence = useCallback((data) => {
-//         if (isAuth) {
-//             IncidentsService.createSlotIncidence(data)
-//                 .then(({ data, status }) => {
-//                     if (status === 200) {
-//                         setUserIncidents([...userIncidents, data]);
-//                         setIncidentsSlots([...incidentsSlots, data]);
-//                         toast.success('Incidence sended, we will try to fix it. Thanks you!');
-//                         setIsCorrect(true);
-//                         setTimeout(() => { setIsCorrect(false); }, 1000);
-//                     }
-//                 })
-//                 .catch(e => console.error(e));
-//         }
-//     }, []);
+    useEffect(function () {
+        if (isAuth) {
+            IncidentsService.getAllIncidentsStation()
+                .then(({ data }) => {
+                    setIncidentsStationUser(data);
+                    // console.log( data);
+                })
+        }
+    }, [setIncidentsStationUser,isAuth])
+    // create user
 
-//     const useAddScooterIncidence = useCallback((data) => {
-//         if (isAuth) {
-//             IncidentsService.createScooterIncidence(data)
-//                 .then(({ data, status }) => {
-//                     if (status === 200) {
-//                         setUserIncidents([...userIncidents, data]);
-//                         setIncidentsScooters([...incidentsScooters, data]);
-//                         toast.success('Incidence sended, we will try to fix it. Thanks you!');
-//                         setIsCorrect(true);
-//                         setTimeout(() => { setIsCorrect(false); }, 1000);
-//                     }
-//                 })
-//                 .catch(e => console.error(e));
-//         }
-//     }, []);
+    const useAddSlotIncidence = useCallback((data) => {
+        if (isAuth) {
+            IncidentsService.createSlotIncidence(data)
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        setUserIncidents([...userIncidents, data]);
+                        setIncidentsSlots([...incidentsSlots, data]);
+                        setIsCorrect(true);
+                        setTimeout(() => { setIsCorrect(false); }, 1000);
+                    }
+                })
+                .catch(e => console.error(e));
+        }
+    }, []);
 
-//     const useDeleteIncidence = (type, id) => {
-//         if (isAuth) {
-//             if (type == 'slot') {
-//                 IncidentsService.deleteSlotIncidence(id)
-//                     .then(({ data, status }) => {
-//                         if (status === 200) {
-//                             toast.success(data.data);
-//                             setIncidentsSlots(incidentsSlots.filter(incidence => incidence.id !== id));
-//                         }
-//                     })
-//                     .catch(e => console.error(e));
-//             } else if (type == 'scooter') {
-//                 IncidentsService.deleteScooterIncidence(id)
-//                     .then(({ data, status }) => {
-//                         if (status === 200) {
-//                             toast.success(data.data);
-//                             setIncidentsScooters(incidentsScooters.filter(incidence => incidence.id !== id));
-//                         }
-//                     })
-//                     .catch(e => console.error(e));
-//             }
-//         }
-//     }
+    const useAddBiciIncidence = useCallback((data) => {
+        if (isAuth) {
+            IncidentsService.createBiciIncidence(data)
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        setUserIncidents([...userIncidents, data]);
+                        setIncidentsBici([...incidentsBici, data]);
+                        setIsCorrect(true);
+                        setTimeout(() => { setIsCorrect(false); }, 1000);
+                    }
+                })
+                .catch(e => console.error(e));
+        }
+    }, []);
 
-//     const useUpdateIncidence = (id, data, type) => {
-//         if (isAuth) {
-//             if (type == 'slot') {
-//                 IncidentsService.updateSlotIncidence(id, data)
-//                     .then(({ data, status }) => {
-//                         if (status === 200) {
-//                             let old_incidents = [...incidentsSlots];
-//                             const remove_old = old_incidents.findIndex(incidence => incidence.id === id);
-//                             if (remove_old !== -1) {
-//                                 old_incidents[remove_old] = data;
-//                                 setIncidentsSlots(old_incidents);
-//                                 toast.success('Slot incidence status updated');
-//                             }
-//                         }
-//                     })
-//                     .catch((e) => {
-//                         toast.error(e.response.data[0]);
-//                     });
-//             } else if (type == 'scooter') {
-//                 IncidentsService.updateScooterIncidence(id, data)
-//                     .then(({ data, status }) => {
-//                         if (status === 200) {
-//                             let old_incidents = [...incidentsScooters];
-//                             const remove_old = old_incidents.findIndex(incidence => incidence.id === id);
-//                             if (remove_old !== -1) {
-//                                 old_incidents[remove_old] = data;
-//                                 setIncidentsScooters(old_incidents);
-//                                 toast.success('Slot incidence status updated');
-//                             }
-//                         }
-//                     })
-//                     .catch((e) => {
-//                         toast.error(e.response.data[0]);
-//                     });
-//             }
-//         }
-//     }
+    const useAddStationIncidence = useCallback((data) => {
+        if (isAuth) {
+            IncidentsService.createStationIncidence(data)
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        setUserIncidents([...userIncidents, data]);
+                        setIncidentsStation([...incidentsStation, data]);
+                        setIsCorrect(true);
+                        setTimeout(() => { setIsCorrect(false); }, 1000);
+                        console.log(data);
+                    }
+                })
+                .catch(e => console.error(e));
+        }
+    }, []);
 
-//     return { isCorrect, incidentsSlots, setIncidentsSlots, incidentsScooters, setIncidentsScooters, userIncidents, setUserIncidents, useAddSlotIncidence, useAddScooterIncidence, useDeleteIncidence, useUpdateIncidence };  
-// }
+    // update admin
+
+    const useUpdateIncidenceSlot = (id, data, type) => {
+        if (isAuth) {
+            IncidentsService.updateSlotIncidence(id, data)
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        let old_incidents = [...incidentsSlots];
+                        const remove_old = old_incidents.findIndex(incidence => incidence.id === id);
+                        if (remove_old !== -1) {
+                            old_incidents[remove_old] = data;
+                            setIncidentsSlots(old_incidents);
+                            toast.success('Slot incidence status updated');
+                        }
+                    }
+                })
+                .catch((e) => {
+                    toast.error(e.response.data[0]);
+                });
+        }
+    }
+
+    const useUpdateIncidenceBici = (id, data, type) => {
+        if (isAuth) {
+            IncidentsService.updateBiciIncidence(id, data)
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        let old_incidents = [...incidentsBici];
+                        const remove_old = old_incidents.findIndex(incidence => incidence.id === id);
+                        if (remove_old !== -1) {
+                            old_incidents[remove_old] = data;
+                            setIncidentsSlots(old_incidents);
+                            // toast.success('bici incidence status updated');
+                        }
+                    }
+                })
+                .catch((e) => {
+                    toast.error(e.response.data[0]);
+                });
+        }
+    }
+
+    const useUpdateIncidenceStation = (id, data, type) => {
+        if (isAuth) {
+            IncidentsService.updateStationIncidence(id, data)
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        let old_incidents = [...incidentsStation];
+                        const remove_old = old_incidents.findIndex(incidence => incidence.id === id);
+                        if (remove_old !== -1) {
+                            old_incidents[remove_old] = data;
+                            setIncidentsSlots(old_incidents);
+                            // toast.success('Slot incidence status updated');
+                        }
+                    }
+                })
+                .catch((e) => {
+                    toast.error(e.response.data[0]);
+                });
+        }
+    }
+
+    // delete admin
+
+    const useDeleteIncidenceSlot = (type, id) => {
+        if (isAuth) {
+            IncidentsService.deleteSlotIncidence(id)
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        toast.success(data.data);
+                        setIncidentsSlots(incidentsSlots.filter(incidence => incidence.id !== id));
+                    }
+                })
+                .catch(e => console.error(e));
+            
+        }
+    }
+
+    const useDeleteIncidenceBici = (type, id) => {
+        if (isAuth) {
+            IncidentsService.deleteBiciIncidence(id)
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        toast.success(data.data);
+                        setIncidentsBici(incidentsBici.filter(incidence => incidence.id !== id));
+                    }
+                })
+                .catch(e => console.error(e));
+            
+        }
+    }
+
+    const useDeleteIncidenceStation = (type, id) => {
+        if (isAuth) {
+            IncidentsService.deleteStationIncidence(id)
+                .then(({ data, status }) => {
+                    if (status === 200) {
+                        toast.success(data.data);
+                        setIncidentsStation(incidentsStation.filter(incidence => incidence.id !== id));
+                    }
+                })
+                .catch(e => console.error(e));
+            
+        }
+    }
+
+
+    return { isCorrect,incidentsStationsUser, setIncidentsStationUser,incidentsSlotsUser, setIncidentsSlotsUser, incidentsSlots,incidentsBici,incidentsStation, setIncidentsSlots, setIncidentsBici,setIncidentsStation, userIncidents, setUserIncidents, useAddSlotIncidence,useAddBiciIncidence,useAddStationIncidence, useUpdateIncidenceSlot,useUpdateIncidenceBici,useUpdateIncidenceStation,useDeleteIncidenceSlot,useDeleteIncidenceBici,useDeleteIncidenceStation };  
+}

@@ -21,6 +21,7 @@ urlpatterns = [
     path('stationincidence/<str:id>', IncidentsView.as_view({"delete": "deleteIncidencestation"})), 
 
     # USER INCIDENTS
+    # create user
     path('slot_incidence', IncidenceslotView.as_view({"post": "post_slot"})),
     path('bici_incidence', IncidencebiciView.as_view({"post": "post_bici"})),
     path('station_incidence', IncidencestationView.as_view({"post": "post_station"})),

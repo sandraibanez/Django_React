@@ -1,17 +1,17 @@
-// import api from "./api"
+import api from "./api"
 
-// const NotificationsService = {
+const NotificationsService = {
 
-//     getAllNotifications() {
-//         // console.log('hola');
-//         return api().get("/notifications");
-//     },
+    getAllNotifications() {
+        // console.log('hola');
+        return api().get("/notifications");
+    },
 
-//     updateNotificationStatus(id) {
-//         return api().put(`notifications/${id}`);
-//         // console.log(id);
-//     }
+    updateNotificationStatus(id) {
+        return api().put(`notifications/${id}`);
+        // console.log(id);
+    }
     
-// };
+};
 
-// export default NotificationsService;
+export default NotificationsService;

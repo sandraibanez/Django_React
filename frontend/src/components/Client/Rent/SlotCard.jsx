@@ -5,7 +5,7 @@ import { useRent } from "../../../hooks/useRent";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import slotimg from '../../../assets/img/Bici.jpg';
-// import IncidenceSlotModal from "../Incidents/IncidenceSlotModal";
+import IncidenceSlotModal from "../Incidents/IncidenceSlotModal";
 import RentModal from "./RentModal";
 
 export default function SlotCard ({ slot }) {
@@ -69,7 +69,7 @@ export default function SlotCard ({ slot }) {
                             Report an incidence
                         </p>
                     </div>
-                    {/* <IncidenceSlotModal openModal={openModal} setOpenModal={setOpenModal} incidenceType={incidence_type} id={modalSlot}/> */}
+                    <IncidenceSlotModal openModal={openModal} setOpenModal={setOpenModal} incidenceType={incidence_type} id={modalSlot}/>
                     <RentModal openModalRent={openModalRent} setOpenModalRent={setOpenModalRent} rent={modalSlot}/>
                 </div>
             </div>

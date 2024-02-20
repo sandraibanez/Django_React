@@ -27,10 +27,12 @@ import { StationContextProvider } from './context/StationsContext';
 import { SlotContextProvider } from './context/SlotsContext';
 import { BiciContextProvider } from './context/BiciContext';
 import { AuthContextProvider } from './context/AuthContext';
-
+import { IncidentsContextProvider } from './context/IncidentsContext';
+import { NotificationsContextProvider } from './context/NotificationsContext';
 //Guards
 import AuthGuard from './services/guards/AuthGuard';
 import AdminGuard from './services/guards/AdminGuard';
+import Profile from './pages/Client/Profile';
 
 // rutas de la aplicacion
 const Home = React.lazy(() => import("./pages/Home/Home"));
@@ -55,6 +57,7 @@ const RentsList = React.lazy(() => import('./pages/Admin/Rent/RentsList'));
 const SlotList = React.lazy(()=>import('./pages/Admin/slot/slotList'))
 const Slot_station = React.lazy(()=>import('./pages/Admin/Slot/slot_station'))
 
+const IncidentsList = React.lazy(()=>import('./pages/Admin/Incidence/IncidentsList'))
 function App() {
   useEffect(() => {
     AOS.init();
@@ -67,34 +70,40 @@ function App() {
             <StationContextProvider>
               <BiciContextProvider>
                 <SlotContextProvider>
-                  <Header/>
-                    <Routes>
-                      {/* rutas del header */}
-                      <Route path="/" element={<Rent/>} />
-                      <Route path="/home" element={<Home/>} />
-                      <Route path="/rent" element={<Rent/>} /> 
-                      <Route path="/login" element={<Login/>}/>
-                      <Route path="/register" element={<Register/>}/>
-                      {/* rutas salto de las paginas */}
-                      <Route element={<AuthGuard/>}>
-                        <Route path="/stations/:slug" element={<StationDetails/>}/>
-                      </Route>
-                      
-                      <Route element={<AdminGuard/>}>
-                        <Route path="/dashboard" element={<Dashboard/>}/>
-                        <Route path="/dashboard/stations" element={<StationsList/>}/>
-                        <Route path="/dashboard/stations/add" element={<StationsAdd/>}/>
-                        <Route path="/dashboard/stations/update/:slug" element={<StationsUpdate/>}/>
-                        <Route path="/dashboard/bici" element={<BiciList/>}/>
-                        <Route path="/dashboard/bici/add" element={<BiciAdd/>}/>
-                        <Route path="/dashboard/bici/update/:slug" element={<BiciUpdate/>}/>
-                        <Route path="/dashboard/users" element={<UsersList/>}/>
-                        <Route path="/dashboard/rents" element={<RentsList/>}/>
-                        <Route path="/dashboard/slot" element={<SlotList/>}/>
-                        <Route path="/dashboard/dashboard/stations/slot/:slug" element={<Slot_station/>}/>
-                      </Route>
-                    </Routes>
-                  <Footer/> 
+                  <IncidentsContextProvider>
+                    <NotificationsContextProvider>
+                      <Header/>
+                        <Routes>
+                          {/* rutas del header */}
+                          <Route path="/" element={<Rent/>} />
+                          <Route path="/home" element={<Home/>} />
+                          <Route path="/rent" element={<Rent/>} /> 
+                          <Route path="/login" element={<Login/>}/>
+                          <Route path="/register" element={<Register/>}/>
+                          {/* rutas salto de las paginas */}
+                          <Route element={<AuthGuard/>}>
+                            <Route path="/profile/:id" element={<Profile/>}/>
+                            <Route path="/stations/:slug" element={<StationDetails/>}/>
+                          </Route>
+                          
+                          <Route element={<AdminGuard/>}>
+                            <Route path="/dashboard" element={<Dashboard/>}/>
+                            <Route path="/dashboard/stations" element={<StationsList/>}/>
+                            <Route path="/dashboard/stations/add" element={<StationsAdd/>}/>
+                            <Route path="/dashboard/stations/update/:slug" element={<StationsUpdate/>}/>
+                            <Route path="/dashboard/bici" element={<BiciList/>}/>
+                            <Route path="/dashboard/bici/add" element={<BiciAdd/>}/>
+                            <Route path="/dashboard/bici/update/:slug" element={<BiciUpdate/>}/>
+                            <Route path="/dashboard/users" element={<UsersList/>}/>
+                            <Route path="/dashboard/rents" element={<RentsList/>}/>
+                            <Route path="/dashboard/slot" element={<SlotList/>}/>
+                            <Route path="/dashboard/dashboard/stations/slot/:slug" element={<Slot_station/>}/>
+                            <Route path="/dashboard/incidents" element={<IncidentsList/>}/>
+                          </Route>
+                        </Routes>
+                      <Footer/> 
+                    </NotificationsContextProvider>
+                  </IncidentsContextProvider>
                 </SlotContextProvider>
               </BiciContextProvider>
             </StationContextProvider>
