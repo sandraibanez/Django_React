@@ -27,6 +27,7 @@ export function useRent() {
         RentService.rentBici(slot)
             .then(({ data, status }) => {
                 if (status == 200) {
+                    console.log(data);
                     toast.success("Bici rented, thank you!")
                     setIsCorrect(true);
                     setTimeout(() => { setIsCorrect(false); }, 1000);

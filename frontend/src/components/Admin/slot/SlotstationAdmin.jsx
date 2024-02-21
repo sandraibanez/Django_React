@@ -1,13 +1,13 @@
 import React from 'react';
-// import './StationsListAdmin.scss';
+import './SlotstationListAdmin.scss';
 
 import SlotCardAdmin from './slotCardAdmin';
 
-export default function StationsListAdmin({ station, slots }) {
+export default function SlotListAdmin({ station, slots }) {
 
     return (
-        <div className="stations_list_container">
-            <div class="station_list d-flex align-items-center">
+        <div className="slot_list_container">
+            <div class="slot_list d-flex align-items-center">
                 <div class="container">
                     <div class="row gy-4 d-flex justify-content-between">
                         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
@@ -24,7 +24,6 @@ export default function StationsListAdmin({ station, slots }) {
                         <th>status</th>
                         <th>bici_id</th>
                         <th>station ID</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 

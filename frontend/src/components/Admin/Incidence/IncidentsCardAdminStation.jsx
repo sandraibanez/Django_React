@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './IncidentsCardAdmin.scss';
+import './IncidentsCardAdminStation.scss';
 import { Popover } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -28,20 +28,20 @@ export default function IncidentsCardAdminStation ({ incidence_station, index, d
         setValue('status', incidence_station.status);
     }, [incidence_station]);
 
-    const status_icon = incidence_station.status === 'pending' ? <FontAwesomeIcon className='pending_icon' icon="fa-regular fa-circle"/> : incidence_station.status === 'in_progress' ? 
+    const status_icon_station = incidence_station.status === 'pending' ? <FontAwesomeIcon className='pending_icon' icon="fa-regular fa-circle"/> : incidence_station.status === 'in_progress' ? 
     <FontAwesomeIcon className='progress_icon' icon="fa-solid fa-circle-half-stroke"/> : <FontAwesomeIcon className='resolved_icon' icon="fa-solid fa-circle-check"/>;
 
     return (
         <tr>
             <td className="id_col">{incidence_station.id}</td>
             <td>{incidence_station.title}</td>
-            <td className='status_field'>{status_icon} {incidence_station.status}</td>
+            <td className='status_field'>{status_icon_station} {incidence_station.status}</td>
             <td>{incidence_station.desc}</td>
             <td>{id}</td>
             <td>{incidence_station.user_id}</td>
             <td>
                 <Popover className="popover">
-                    <Popover.Panel className="popover_panel">
+                    <Popover.Panel className="popover_panel_station">
                         <form className="popover_form" onSubmit={handleSubmit(onSubmit)}>
                             <input type="radio" value="pending" name="status" {...register('status')}/>Pending
                             <input type="radio" value="in_progress" name="status" {...register('status')}/>In progress

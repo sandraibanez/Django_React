@@ -49,7 +49,7 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
 
     useEffect(() => {
         if (isCorrect) {
-            navigate('/home');
+            navigate('/rent');
         }
     }, [isCorrect, navigate]);
 

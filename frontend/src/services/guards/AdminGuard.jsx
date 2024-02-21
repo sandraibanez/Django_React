@@ -19,7 +19,7 @@ function AdminGuard() {
     //         })
     // }
 
-    return isAdmin ? <Outlet/> : <Navigate to="/home"/>
+    return isAdmin ? <Outlet/> : <Navigate to="/rent"/>
 }
 
 export default AdminGuard;

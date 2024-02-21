@@ -90,7 +90,7 @@ export function useIncidents() {
                         if (remove_old !== -1) {
                             old_incidents[remove_old] = data;
                             setIncidentsSlots(old_incidents);
-                            toast.success('Slot incidence status updated');
+                            // toast.success('Slot incidence status updated');
                         }
                     }
                 })
@@ -109,7 +109,7 @@ export function useIncidents() {
                         const remove_old = old_incidents.findIndex(incidence => incidence.id === id);
                         if (remove_old !== -1) {
                             old_incidents[remove_old] = data;
-                            setIncidentsSlots(old_incidents);
+                            setIncidentsBici(old_incidents);
                             // toast.success('bici incidence status updated');
                         }
                     }
@@ -129,7 +129,7 @@ export function useIncidents() {
                         const remove_old = old_incidents.findIndex(incidence => incidence.id === id);
                         if (remove_old !== -1) {
                             old_incidents[remove_old] = data;
-                            setIncidentsSlots(old_incidents);
+                            setIncidentsStation(old_incidents);
                             // toast.success('Slot incidence status updated');
                         }
                     }
@@ -147,7 +147,7 @@ export function useIncidents() {
             IncidentsService.deleteSlotIncidence(id)
                 .then(({ data, status }) => {
                     if (status === 200) {
-                        toast.success(data.data);
+                        // toast.success(data.data);
                         setIncidentsSlots(incidentsSlots.filter(incidence => incidence.id !== id));
                     }
                 })
@@ -161,7 +161,7 @@ export function useIncidents() {
             IncidentsService.deleteBiciIncidence(id)
                 .then(({ data, status }) => {
                     if (status === 200) {
-                        toast.success(data.data);
+                        // toast.success(data.data);
                         setIncidentsBici(incidentsBici.filter(incidence => incidence.id !== id));
                     }
                 })
@@ -175,7 +175,7 @@ export function useIncidents() {
             IncidentsService.deleteStationIncidence(id)
                 .then(({ data, status }) => {
                     if (status === 200) {
-                        toast.success(data.data);
+                        // toast.success(data.data);
                         setIncidentsStation(incidentsStation.filter(incidence => incidence.id !== id));
                     }
                 })

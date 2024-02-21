@@ -35,7 +35,6 @@ import AdminGuard from './services/guards/AdminGuard';
 import Profile from './pages/Client/Profile';
 
 // rutas de la aplicacion
-const Home = React.lazy(() => import("./pages/Home/Home"));
 const Rent = React.lazy(() => import( "./pages/Rent/Rent"));
 const Dashboard = React.lazy(() => import( "./pages/Admin/Dashboard"));
 const Login = React.lazy(() => import( "./pages/Login/Login"));
@@ -76,7 +75,6 @@ function App() {
                         <Routes>
                           {/* rutas del header */}
                           <Route path="/" element={<Rent/>} />
-                          <Route path="/home" element={<Home/>} />
                           <Route path="/rent" element={<Rent/>} /> 
                           <Route path="/login" element={<Login/>}/>
                           <Route path="/register" element={<Register/>}/>

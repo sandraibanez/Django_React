@@ -15,8 +15,11 @@ class RentView(viewsets.GenericViewSet):
         serializer = RentSerializer.usertoken(
         context=serializer_context_user)
         username = serializer[0]
+       
         serializer_context = { 'username': username, 'slot_id': slot_id }
+        
         serializer = RentSerializer.rent(context=serializer_context)
+        # return Response(serializer)
         return Response(RentSerializer.to_rent(serializer))
 
     def getOneRent(self, request):

@@ -10,7 +10,7 @@ const Login = () => {
 
     useEffect(() => {
         if (isCorrect) {
-            navigate('/home');
+            navigate('/rent');
         }
     }, [isCorrect, navigate]);
 

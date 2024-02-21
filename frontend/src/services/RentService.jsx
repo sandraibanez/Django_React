@@ -7,7 +7,7 @@ const RentService = {
     },
 
     rentBici(slot) {
-        console.log(slot)
+        console.log(slot);
         return api().post(`rent/${slot.id}`);
     },
 

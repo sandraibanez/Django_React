@@ -10,7 +10,6 @@ export default function Header () {
     const { notificationsNumber } = useNotifications();
 
     const redirects = {
-        home: () => navigate('/home'),
         rent: () => navigate('/rent'),
         dashboard: () => navigate('/dashboard'),
         login: () => navigate('/login'),
@@ -38,13 +37,12 @@ export default function Header () {
     return (
         <header id="header" className="header d-flex align-items-center fixed-top">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
-                <a className="logo d-flex align-items-center" onClick={() => redirects.home()}>
+                <a className="logo d-flex align-items-center" onClick={() => redirects.rent()}>
                     <img src="/assets/Logo.png" alt="logo"/>
                 </a>
                 <nav id="navbar" className="navbar">
                     <ul className="header-container container-fluid">
                         <li className="link nav-link" onClick={() => redirects.rent()}>Rent</li>
-                        <li className="link nav-link" onClick={() => redirects.home()}>Home</li>
                         {isAdminUser}
                         {isUsername}
                         {isUser}

@@ -1,4 +1,4 @@
-.stations_list_container {
+.stations_list_containeradmin {
     // padding: 20px;
     min-height: 77vh;
     overflow-x: auto;
@@ -9,25 +9,7 @@
         text-transform: uppercase;
         padding: 30px;
     }
-    .add_button {
-        display: block;
-        width: 150px;
-        padding: 10px;
-        margin: auto;
-        margin-bottom: 3%;
-        margin-top:3%;
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: bold;
-        font-size: 14px;
-        border: 2px solid #333;
-        border-radius: 10px; 
-        background-color: #0e1d34ea;
-        color: white;
-        &:hover{
-            background-color: #0e1d34c0;
-        }
-    }
+    
     .table {
         background-color: #EAF2E3;
         width: 80%;
@@ -57,7 +39,7 @@ $color-secondary: var(--color-secondary);
 $color-primary: var(--color-primary);
 $font-primary: var(--font-primary);
 
-.station_list {
+.station_listadmin {
   width: 100%;
   min-height: 50vh;
   background-color: $color-secondary;

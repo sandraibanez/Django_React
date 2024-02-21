@@ -4,10 +4,10 @@ import IncidentsListAdmin from "../../../components/Admin/Incidence/IncidentsLis
 
 const IncidentsList = () => {
     
-    const {incidentsSlots,  useDeleteIncidence, incidentsStation, } = useIncidents();
+    const {incidentsSlots,  useDeleteIncidenceSlot,useDeleteIncidenceStation, incidentsStation, } = useIncidents();
 
     return (
-        <IncidentsListAdmin incidents_slots={incidentsSlots} incidents_station={incidentsStation} deleteIncidence={useDeleteIncidence}/>
+        <IncidentsListAdmin incidents_slots={incidentsSlots} incidents_station={incidentsStation} deleteIncidenceslot={useDeleteIncidenceSlot} deleteIncidencestation={useDeleteIncidenceStation}/>
     )
 }
 

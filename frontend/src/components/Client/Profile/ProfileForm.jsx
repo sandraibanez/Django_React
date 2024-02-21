@@ -7,7 +7,6 @@ import { useAuth } from "../../../hooks/useAuth";
 import { useNotifications } from "../../../hooks/useNotifications";
 import { useParams } from "react-router-dom";
 import Notification from "../Notifications/Notification";
-// import IncidenceSlotModal from '../Incidents/IncidenceSlotModal';
 import ListIncidencias from './listincidencias';
 import ListIncidenciasstation from './ListIncidenciasstation';
 
@@ -61,12 +60,10 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
 
     return (
         <div className='profile_page'>
-
             <form onSubmit={handleSubmit(send_data)}>
                 <div className="profile">
                     <div className='profile_image'>
                         <img className='user_image' src={profile.image} alt='' />
-                        <input type="text" id="image" {...register('image')} disabled={edit} />
                         <span className="error">{errors.image?.message}</span>
                     </div>
                     <div className='profile_user'>
@@ -90,7 +87,7 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
 
             <h3>Incidencias</h3>
             <h2>Slot</h2>
-            <div className="incidents_list_container">
+            <div className="incidents_list_container_slot">
                 <table className="slot_table" border="1">
                     <thead className="thead_incidents_list">
                         <tr>
@@ -111,7 +108,7 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
                 </table>
             </div>
             <h2>Station</h2>
-            <div className="incidents_list_container">
+            <div className="incidents_list_container_station">
                 <table className="slot_table" border="1">
                     <thead className="thead_incidents_list">
                         <tr>

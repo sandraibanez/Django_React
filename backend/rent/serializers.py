@@ -38,18 +38,20 @@ class RentSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('User not found')
 
         slot = Slot.objects.get(pk=slot_id)
-
+       
         if slot is None or slot.bici_id is None:
             raise serializers.ValidationError('Slot not found')
         
         bici = Bicis.objects.get(pk=slot.bici_id)
+        print(bici)
         if bici is None:
             raise serializers.ValidationError('bici not found')
 
         user_rent = Rent.objects.filter(user_id=user.id, end_slot_id=None)
+        # return (user_rent)
         if len(user_rent) > 0:
             raise serializers.ValidationError('You only can rent one bici')
-
+        print (slot)
         rent = Rent.objects.create(user_id=user.id, bici_id=slot.bici_id, initial_slot_id=slot_id)
         rent.save()
 

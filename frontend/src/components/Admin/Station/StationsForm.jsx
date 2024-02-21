@@ -13,10 +13,7 @@ const StationsForm = ({station= {slug: '', name: '', direction: '', img: '', loc
     const validators = Yup.object().shape({
         name: Yup.string().required('*Name is required').min(3).max(50),
         direction: Yup.string().required('*direction is required'),
-        // status: Yup.string().required('*Status is required'),
         img: Yup.string().required('*img is required').min(3).max(100),
-        // latitude: Yup.number().required('*Latitude is required').min(-180).max(180),
-        // longitude: Yup.number().required('*Longitude is required').min(-180).max(180),
         location:Yup.string().required('*Location is required'),
         slots: Yup.number().required('*Slots number must be between 5 and 20').min(5).max(20),
     });
@@ -26,12 +23,9 @@ const StationsForm = ({station= {slug: '', name: '', direction: '', img: '', loc
     useEffect(() => {
         if (station.slug !== '') {
             setValue('name', station.name);
-            // setValue('status', station.status);
             setValue('img', station.img);
             setValue('direction',station.direction);
             setValue('location',station.location);
-            // setValue('latitude', station.latitude);
-            // setValue('longitude', station.longitude);
             setValue('slots', station.slots);
         }
     }, [station]);
@@ -59,15 +53,7 @@ const StationsForm = ({station= {slug: '', name: '', direction: '', img: '', loc
                 <input type="text" id="direction" {...register('direction')}/><br/>
                 <span className="error">{errors.direction?.message}</span>
             </div>
-            {/* <div className='status_box'>
-                <label htmlFor='status' className='etiqueta'>Status:</label>
-                <select id='status' name="status" {...register('status')} defaultValue="">
-                    <option value="" disabled>Select</option>
-                    <option value="active">Active</option>
-                    <option value="disabled">Disabled</option>
-                </select><br/>
-                <span className="error">{errors.status?.message}</span>
-            </div> */}
+            
             <div className='img_box'>
                 <label htmlFor='img' className='etiqueta'>img:</label>
                 <input id='img' name="img" type="text" {...register('img')}/><br/>
@@ -78,17 +64,6 @@ const StationsForm = ({station= {slug: '', name: '', direction: '', img: '', loc
                 <input type="text" id="Location" {...register('location')}/><br/>
                 <span className="error">{errors.location?.message}</span>
             </div>
-            {/* <div className='latitude_box'>
-                <label htmlFor='latitude' className='etiqueta'>Latitude:</label>
-                <input id='latitude' name="latitude" type="text" {...register('latitude')}/><br/>
-                <span className="error">{errors.latitude?.message}</span>
-            </div>
-            <div className='longitude_box'>
-                <label htmlFor='longitude' className='etiqueta'>Longitude:</label>
-                <input id='longitude' name="longitude" type="text" {...register('longitude')}/><br/>
-                <span className="error">{errors.longitude?.message}</span>
-            </div>
-           */}
             <div className='slots_box'>
                 <label htmlFor='slots' className='etiqueta'>Slots:</label>
                 <input id='slots' name="slots" type="text" {...register('slots')}/><br/>

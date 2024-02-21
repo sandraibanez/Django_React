@@ -46,7 +46,7 @@ export function AuthContextProvider({ children }) {
             .then(({ data }) => {
                 setToken(data.token);
                 JwtService.saveToken(data.token);
-                navigate('/home');
+                navigate('/rent');
             })
             .catch(({ }) => {
                 logout();
@@ -61,7 +61,7 @@ export function AuthContextProvider({ children }) {
         setIsAuth(false);
         setIsAdmin(false);
         toast.success('Loged out successfully');
-        navigate('/home');
+        navigate('/rent');
     }, []);
 
     return <Context.Provider value={{ user, setUser, token, setToken, isAuth, setIsAuth, isAdmin, setIsAdmin, logout }}>

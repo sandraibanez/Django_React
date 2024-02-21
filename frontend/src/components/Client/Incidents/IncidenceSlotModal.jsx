@@ -47,7 +47,7 @@ export default function IncidenceSlotModal ({ openModal, setOpenModal, incidence
 
     useEffect(() => {
         if (isCorrect) {
-            navigate('/home');
+            navigate('/rent');
         }
     }, [isCorrect, navigate]);
 

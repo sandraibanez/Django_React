@@ -12,9 +12,6 @@ export default function SlotCardAdmin ({ station, slots  }) {
             <td>{slots.status}</td>
             <td>{slots.bici_id}</td>
             <td>{slots.stations_id}</td>
-            <td> 
-                <button className="buttons" onClick={() => deleteslot(slots.id)}>Delete</button>
-            </td>
         </tr>
     )
 }

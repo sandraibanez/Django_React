@@ -2,11 +2,19 @@ import React from 'react';
 import './RentsListAdmin.scss';
 import RentsCardAdmin from './RentsCardAdmin';
 
-export default function RentsListAdmin ({ rents, deleteRent }) {
+export default function RentsListAdmin({ rents, deleteRent }) {
 
-    return  (
+    return (
         <div className="rents_list_container">
-            <h1>Rents List</h1>
+            <div className="rent_list d-flex align-items-center">
+                <div className="container">
+                    <div className="row gy-4 d-flex justify-content-between">
+                        <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                            <h1>Rents List</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <table className="table" border="1">
                 <thead className="thead_rents_list">
                     <tr>
@@ -22,8 +30,8 @@ export default function RentsListAdmin ({ rents, deleteRent }) {
                 </thead>
                 <tbody className="tbody_rents_list">
                     {
-                        rents.map(( rent, index ) => (
-                            <RentsCardAdmin key={index} rent={rent} deleteRent={deleteRent}/>
+                        rents.map((rent, index) => (
+                            <RentsCardAdmin key={index} rent={rent} deleteRent={deleteRent} />
                         ))
                     }
                 </tbody>

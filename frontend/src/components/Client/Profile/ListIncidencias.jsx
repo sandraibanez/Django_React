@@ -1,5 +1,5 @@
 import React from 'react';
-import './ListIncidencias.scss';
+// import './ListIncidencias.scss';
 
 export default function ListIncidencias ({ incidence }) {
     // console.log(incidence);

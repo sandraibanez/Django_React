@@ -14,10 +14,10 @@ export default function StationsListAdmin({ stations, deleteStation }) {
 
     return (
         <div className="stations_list_container">
-            <div class="station_list d-flex align-items-center">
-                <div class="container">
-                    <div class="row gy-4 d-flex justify-content-between">
-                        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <div className="station_list d-flex align-items-center">
+                <div className="container">
+                    <div className="row gy-4 d-flex justify-content-between">
+                        <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                             <h1>Stations List</h1>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 form{
-    margin-top: 20%;
+    margin-left: 33%;
 }
-.scooter_add_container, .scooter_update_container {
+.Bici_add_container, .Bici_update_container {
     padding: 20px;
     width: 100%;
     
@@ -18,7 +18,7 @@ form{
         color: red;
         font-style: italic;
     }
-    .scooter_form {
+    .Bici_form {
         display: flex;
         flex-direction: column;
         justify-content: left;
@@ -65,14 +65,14 @@ form{
 
 @media screen and (max-width: 576px) {
 
-    .scooter_add_container, .scooter_update_container {
+    .Bici_add_container, .Bici_update_container {
         min-height: 83vh;
         .title {
             h1 {
                 font-size: 25px;
             }
         }
-        .scooter_form {
+        .Bici_form {
             padding: 10px;
             div {
                 padding: 10px;
@@ -91,14 +91,14 @@ form{
 
 @media screen and (min-width: 577px) {
 
-    .scooter_add_container, .scooter_update_container {
+    .Bici_add_container, .Bici_update_container {
         min-height: 85vh;
         .title {
             h1 {
                 font-size: 30px;
             }
         }
-        .scooter_form {
+        .Bici_form {
             padding: 20px;
             div {
                 padding: 20px;
@@ -117,14 +117,14 @@ form{
 
 @media screen and (min-width: 992px) {
 
-    .scooter_add_container, .scooter_update_container {
+    .Bici_add_container, .Bici_update_container {
         min-height: 81vh;
         .title {
             h1 {
                 font-size: 35px;
             }
         }
-        .scooter_form {
+        .Bici_form {
             padding: 30px;
             div {
                 padding: 30px;
