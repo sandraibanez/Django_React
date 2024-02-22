@@ -32,6 +32,16 @@ const SignUpForm = ({form_type, sendData, errorMSG}) => {
 
     return (
         // <h1>hola1</h1>
+        <div>
+        <div className="login_list d-flex align-items-center">
+                <div className="container">
+                    <div className="row gy-4 d-flex justify-content-between">
+                        <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                            <h1>Register</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <div className="user">
             <div className="user_options-container">
                 <div className="user_options-text">
@@ -77,6 +87,7 @@ const SignUpForm = ({form_type, sendData, errorMSG}) => {
                     </div>
                 </div>
             </div>
+    </div>
     </div>
     )
 }

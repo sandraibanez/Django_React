@@ -29,6 +29,17 @@ const SignInForm = ({form_type, sendData, errorMSG}) => {
     const bounce_type = form_type == 'login' ? 'user_options-forms SignIn' : 'user_options-forms SignUp';
 
     return (
+        <div>
+            <div className="login_list d-flex align-items-center">
+                <div className="container">
+                    <div className="row gy-4 d-flex justify-content-between">
+                        <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                            <h1>Login</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
         <div className="user">
             <div className="user_options-container">
                 <div className="user_options-text">
@@ -67,6 +78,7 @@ const SignInForm = ({form_type, sendData, errorMSG}) => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
