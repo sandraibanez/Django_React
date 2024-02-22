@@ -142,7 +142,7 @@ Una vez se esta creado deveria aparecer algo asi por consola:
 
 ## 5. Configuracion del pgadmin
 
-  -  Hay que poner el correo y la contraseña del .env 
+  -  Hay que poner el correo y la contraseña del .env usuario `sandrasoleribanez@gmail.com` contraseña `sandra2001`
     
       ![Ejemplo de imagen](img/8.PNG)
 
@@ -152,7 +152,7 @@ Una vez se esta creado deveria aparecer algo asi por consola:
 
       ![Ejemplo de imagen](img/8.2.PNG)
     
-  -  En nombre/direccion del servidor hay que poner el nombre del contenedor del db en este caso `postgres_container`, la contraseña es `sandra2001` y el nombre de usuario es el de `postgres` aunque ponga sandrasoler, sino se pone asi no funcionara
+  -  En nombre/direccion del servidor hay que poner el nombre del contenedor del db en este caso `postgres_container`, la contraseña es `sandra2001` y el nombre de usuario es el de `postgres` aunque ponga sandrasoleribanez, sino se pone asi no funcionara
 
       ![Ejemplo de imagen](img/8.3.PNG)
 
