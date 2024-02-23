@@ -1,4 +1,4 @@
-# Proyecto Dockerizado de React, Django, PostgreSQL y nginx en Windows
+![image](https://github.com/sandraibanez/Django_React/assets/128723982/e18ebd8e-b3f0-4987-aac6-e2517ec71d7a)# Proyecto Dockerizado de React, Django, PostgreSQL y nginx en Windows
 
 Este proyecto consiste en un entorno dockerizado que incluye React, Django, PostgreSQL y nginx.
 
@@ -8,10 +8,11 @@ Este proyecto consiste en un entorno dockerizado que incluye React, Django, Post
 2. [Imágenes necesarias](#2-Imágenes-Docker)
 3. [Configuración del Proyecto](#3-Configuración-del-Proyecto)
 4. [Creación de Contenedores](#4-Ejecución-del-Proyecto)
-5. [Configuracion del pgadmin](#5-configuracion-del-pgadmin)
-6. [Comprobacion del backend](#6-Comprobacion-del-backend)
-7. [Comprobacion del frontend](#7-Comprobacion-del-frontend)
+5. [Configuración del pgadmin](#5-configuracion-del-pgadmin)
+6. [Comprobación del backend](#6-Comprobacion-del-backend)
+7. [Comprobación del frontend](#7-Comprobacion-del-frontend)
 8. [Puertos](#8-puertos)
+9. [Problemas que he tenido](#9-Problemas-que-he-tenido)
 
 # Pasos para probar el funcionamiento del proyecto
 
@@ -211,3 +212,21 @@ Una vez se esta creado deveria aparecer algo asi por consola:
 |backend     |8000:8000|
 |frontend    |3000:3000|
 |loadbalancer-nginx|8080:8080|
+
+## 9. Problemas que he tenido
+
+Para poder realizar la copia de seguridad de la base de datos de postgres he estado probando estas opciones aunque ninguna funciona:
+
+ ![Ejemplo de imagen](img/11.PNG)
+
+ Pero no funciona porque dice que no esta conectado o no puede establecer conexiones tcp/ip
+
+ He estado intentando ver si se conectaba a la base de datos pero me sale el mismo error:
+
+ ![Ejemplo de imagen](img/11.1.PNG)
+
+ como podemos ver postgres esta conectado:
+
+ ![Ejemplo de imagen](img/11.2.PNG) 
+
+ y aun asi dice que no esta conectado y por eso no se puede realizar creacion de la copia de seguridad
