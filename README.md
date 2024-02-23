@@ -1,4 +1,4 @@
-![image](https://github.com/sandraibanez/Django_React/assets/128723982/e18ebd8e-b3f0-4987-aac6-e2517ec71d7a)# Proyecto Dockerizado de React, Django, PostgreSQL y nginx en Windows
+# Proyecto Dockerizado de React, Django, PostgreSQL y nginx en Windows
 
 Este proyecto consiste en un entorno dockerizado que incluye React, Django, PostgreSQL y nginx.
 
@@ -215,18 +215,36 @@ Una vez se esta creado deveria aparecer algo asi por consola:
 
 ## 9. Problemas que he tenido
 
-Para poder realizar la copia de seguridad de la base de datos de postgres he estado probando estas opciones aunque ninguna funciona:
+He estado haciendo intentos para realizar la copia de seguridad de la base de datos de postgres, pero hasta ahora no he tenido éxito.
 
  ![Ejemplo de imagen](img/11.PNG)
 
- Pero no funciona porque dice que no esta conectado o no puede establecer conexiones tcp/ip
+He probado varias opciones, pero todas resultan en un mensaje de error que indica que no se puede establecer una conexión TCP/IP.
 
- He estado intentando ver si se conectaba a la base de datos pero me sale el mismo error:
+Incluso he intentado verificar la conexión a la base de datos, pero el mismo error persiste.
 
  ![Ejemplo de imagen](img/11.1.PNG)
 
- como podemos ver postgres esta conectado:
+Aparentemente, Postgres está funcionando correctamente:
 
- ![Ejemplo de imagen](img/11.2.PNG) 
+ ![Ejemplo de imagen](img/11.2.PNG)
 
- y aun asi dice que no esta conectado y por eso no se puede realizar creacion de la copia de seguridad
+ ![Ejemplo de imagen](img/11.3.PNG)
+ 
+Sin embargo, a pesar de que la base de datos está activa, no puedo realizar la copia de seguridad debido a este problema de conexión.
+
+Aunque he utilizado el siguiente comando para intentar realizar la copia de seguridad:
+
+![Ejemplo de imagen](img/11.4.PNG)
+
+![Ejemplo de imagen](img/11.5.PNG)
+
+Y he confirmado que hay datos en las tablas:
+
+![Ejemplo de imagen](img/11.8.PNG)
+
+Sigo sin éxito. Parece que las tablas en pgAdmin están vacías, y aunque intento detener y reiniciar el backend, el proceso de migración se realiza sin ningún problema. Esto sugiere que el archivo no está siendo reconocido, a pesar de que la ruta está configurada correctamente.
+ 
+![Ejemplo de imagen](img/11.6.PNG)
+
+![Ejemplo de imagen](img/11.7.PNG)
