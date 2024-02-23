@@ -70,7 +70,7 @@ Se cambia el nombre del archivo a por el nuevo:
   #### 3.1.2 Solución de problemas de conexión
 
   Si no se realizan el paso anterior, es posible que al iniciar los contenedores se muestre un mensaje de error de conexión en el contenedor del backend. En este caso, sigue estos pasos alternativos:
-  - Hay que comentar esto del dockerfile sino dara error porque no encintrara el archivo
+  - Hay que comentar esto del dockerfile sino dara error porque no encontrara el archivo
     
     ![Ejemplo de imagen](img/4.5.PNG)
     
